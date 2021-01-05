@@ -5,7 +5,6 @@ function addItem() {
     <div class="add__placeholder">
         <div class="add">
             <h1>В список покупок</h1>
-            <form>
                 <div class="omrs-input-group">
                     <label class="omrs-input-underlined">
                     <input
@@ -17,10 +16,8 @@ function addItem() {
                     >
                     <span class="omrs-input-label">Наименование</span>
                 </div>
-            </form>
             <div style="display: flex; flex-direction: row; justify-content: space-between;">
                 <div style="margin-left: 3%; width: 47%;">
-                    <form>
                         <div class="omrs-input-group">
                             <label class="omrs-input-underlined">
                             <input
@@ -33,7 +30,6 @@ function addItem() {
                             >
                             <span class="omrs-input-label">Кол-во</span>
                         </div>
-                    </form>
                 </div>
                 <select style="width: 41%; margin-right: 6%;"
                     class="add__input unit"
@@ -167,7 +163,6 @@ function saveList() {
         <div class="add__placeholder">
             <div class="add">
                 <h1>Сохранить список</h1>
-                <form>
                     <div class="omrs-input-group">
                         <label class="omrs-input-underlined">
                         <input
@@ -179,7 +174,6 @@ function saveList() {
                         >
                         <span class="omrs-input-label">Название</span>
                     </div>
-                </form>
                 <div style="display: flex; flex-direction: row; justify-content: center;">
                     <button style="background-color: #5cd8dc;"
                         onclick="confirmAction(true, 'list')">
@@ -201,7 +195,6 @@ function assignList(id) {
         <div class="add__placeholder">
             <div class="add">
                 <h1>Добавить напоминание</h1>
-                <form>
                     <div class="omrs-input-group">
                         <label class="omrs-input-underlined">
                         <input
@@ -213,7 +206,6 @@ function assignList(id) {
                         >
                         <span class="omrs-input-label">Комментарий</span>
                     </div>
-                </form>
                 <div style="display: flex; flex-direction: row; justify-content: center;">
                     <button style="background-color: #5cd8dc;"
                         onclick="confirmAction(true, 'assignList', '${id}')">
