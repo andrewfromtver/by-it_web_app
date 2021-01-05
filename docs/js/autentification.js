@@ -12,6 +12,7 @@ function login() {
   if (firstLoad) {
     username = 'Cписок покупок';
     localStorage.setItem('username', username);
+    preloadMedia();
   }
 
   if (localStorage.itemsList) {
@@ -28,7 +29,6 @@ function login() {
 
   if (localStorage.username) {
     username = localStorage.username;
-    preloadMedia();
   }
 }
 

@@ -7,6 +7,7 @@ function login(firstLoad = false) {
     if (firstLoad) {
         username = 'Cписок покупок'
         localStorage.setItem('username', username);
+        preloadMedia();
     }
     if (localStorage.itemsList) {
         itemsList = JSON.parse(localStorage.itemsList);
@@ -19,7 +20,6 @@ function login(firstLoad = false) {
     }
     if (localStorage.username) {
         username = localStorage.username;
-        preloadMedia();
     }
 }
 function logout(type = 'none') {

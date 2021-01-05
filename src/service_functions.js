@@ -207,4 +207,7 @@ function initApp() {
             </div>
         </div>
     `;
+    if (username != '') {
+        preloadMedia();
+    }
 }

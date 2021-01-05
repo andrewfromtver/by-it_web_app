@@ -177,4 +177,8 @@ function errorCleaner() {
 
 function initApp() {
   document.body.innerHTML = "\n        <div class=\"login__placeholder\">\n            <div class=\"login\">\n                <h1>\u0421\u043F\u0438\u0441\u043E\u043A \u043F\u043E\u043A\u0443\u043F\u043E\u043A</h1>\n                <p style=\"font-size: 14px;\">\n                    <code>1 - \u0441\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0439\u0442\u0435 \u0441\u043F\u0438\u0441\u043A\u0438 \u043F\u043E\u043A\u0443\u043F\u043E\u043A<br>\n                    <br>\n                    2 - \u043E\u0442\u043C\u0435\u0447\u0430\u0439\u0442\u0435 \u043F\u043E\u043A\u0443\u043F\u043A\u0438 \u0432 \u0441\u043F\u0438\u0441\u043A\u0435<br>\n                    <br>\n                    3 - \u0441\u043E\u0445\u0440\u0430\u043D\u044F\u0439\u0442\u0435 \u0438\u0437\u0431\u0440\u0430\u043D\u044B\u0435 \u0441\u043F\u0438\u0441\u043A\u0438<br>\n                    <br>\n                    4 - \u0443\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0439\u0442\u0435 \u043D\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u043D\u0438\u044F</code>\n                </p>\n                <div style=\"display: flex; flex-direction: row; justify-content: center;\">\n                    <button\n                        style=\"background-color: #5cd8dc; width: 80%;\"\n                        onclick=\"login(true)\"\n                    >\n                        \u041F\u0435\u0440\u0435\u0439\u0442\u0438 \u043A \u043F\u043E\u043A\u0443\u043F\u043A\u0430\u043C\n                    </button>\n                </div>\n                <div class=\"error\"></div>\n            </div>\n        </div>\n    ";
+
+  if (username != '') {
+    preloadMedia();
+  }
 }
