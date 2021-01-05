@@ -23,7 +23,7 @@ function setInputFilter(textbox, inputFilter) {
 document.documentElement.style.setProperty('--vh', vh + 'px');
 window.addEventListener('resize', function () {
   function init() {
-    const vh = window.innerHeight * 0.01;
+    var vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', vh + 'px');
   }
 
@@ -32,7 +32,7 @@ window.addEventListener('resize', function () {
 /* Blur UI on popup */
 
 function blurUi() {
-  let toggle = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+  var toggle = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
   if (toggle) {
     document.querySelector('.navbar').style = 'filter: blur(5px); opacity: 0.75;';
@@ -57,7 +57,7 @@ function preloadMedia() {
 
 
 function activeitem() {
-  let name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'main';
+  var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'main';
 
   if (name == 'main') {
     document.querySelector('#main').style.backgroundColor = '#5cd8dc';
@@ -109,7 +109,7 @@ function activeitem() {
 
 
 function hideWarn() {
-  let type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+  var type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
   document.querySelector('.add__placeholder').remove();
   blurUi();
 
@@ -118,16 +118,16 @@ function hideWarn() {
     selectedItems = 0;
     window[type]();
   } else {
-    const itemsCollection = document.querySelector('.user__table').rows;
-    const qty = itemsCollection.length;
+    var itemsCollection = document.querySelector('.user__table').rows;
+    var qty = itemsCollection.length;
     var itemsQty = 0;
 
-    for (let index = 0; index < qty; index++) {
+    for (var index = 0; index < qty; index++) {
       itemsQty += Number(document.querySelector('.user__table').rows[index].querySelectorAll('td')[1].innerText);
     }
 
-    const ctx = document.getElementById('statChart').getContext('2d');
-    const chart = new Chart(ctx, {
+    var ctx = document.getElementById('statChart').getContext('2d');
+    var chart = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: ['Позиции'],
@@ -156,7 +156,7 @@ function hideWarn() {
 }
 
 function warnPopup() {
-  let type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'main';
+  var type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'main';
   blurUi(true);
   var functionName = "hideWarn('".concat(type, "')");
 

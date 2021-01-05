@@ -6,7 +6,7 @@ window.onload = function () {
 };
 
 function login() {
-  let firstLoad = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+  var firstLoad = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
   if (firstLoad) {
     username = 'Cписок покупок';
@@ -32,7 +32,7 @@ function login() {
 }
 
 function logout() {
-  let type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'none';
+  var type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'none';
 
   if (type == 'shutDown') {
     selectedRows = 0;

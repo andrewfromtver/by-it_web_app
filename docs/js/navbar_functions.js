@@ -50,16 +50,16 @@ function admin() {
 
   if (document.querySelector('.admin__table').rows.length > 0) {
     document.querySelector('.content').innerHTML = "\n            <p>\u041E\u0441\u043D\u043E\u0432\u043D\u044B\u0435 \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u0438</p>\n            <div class=\"chart\">\n                <canvas id=\"statChart\"></canvas>\n            </div>\n            <button style=\"width: 94%; margin: 3%; background-color: #fba29e;\"\n                onclick=\"logout()\">\n                    \u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C \u043F\u043E\u043A\u0443\u043F\u043A\u0438\n            </button>\n        ";
-    const itemsCollection = document.querySelector('.admin__table').rows;
+    var itemsCollection = document.querySelector('.admin__table').rows;
     var qty = itemsCollection.length;
     var itemsQty = 0;
 
-    for (let index = 0; index < qty; index++) {
+    for (var index = 0; index < qty; index++) {
       itemsQty += Number(document.querySelector('.admin__table').rows[index].querySelectorAll('td')[1].innerText.split(' ')[0]);
     }
 
-    const ctx = document.getElementById('statChart').getContext('2d');
-    const chart = new Chart(ctx, {
+    var ctx = document.getElementById('statChart').getContext('2d');
+    var chart = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: ['Список покупок'],
@@ -107,16 +107,16 @@ function user() {
 
   if (document.querySelector('.user__table').rows.length > 0) {
     document.querySelector('.content').innerHTML = "\n            <p>\u041E\u0441\u043D\u043E\u0432\u043D\u044B\u0435 \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u0438</p>\n            <div class=\"chart\">\n                <canvas id=\"statChart\"></canvas>\n            </div>\n            <button style=\"width: 94%; margin: 3%; background-color: #fba29e;\"\n                onclick=\"logout()\">\n                    \u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C \u043F\u043E\u043A\u0443\u043F\u043A\u0438\n            </button>\n        ";
-    const itemsCollection = document.querySelector('.user__table').rows;
-    const qty = itemsCollection.length;
+    var itemsCollection = document.querySelector('.user__table').rows;
+    var qty = itemsCollection.length;
     var itemsQty = 0;
 
-    for (let index = 0; index < qty; index++) {
+    for (var index = 0; index < qty; index++) {
       itemsQty += Number(document.querySelector('.user__table').rows[index].querySelectorAll('td')[1].innerText);
     }
 
-    const ctx = document.getElementById('statChart').getContext('2d');
-    const chart = new Chart(ctx, {
+    var ctx = document.getElementById('statChart').getContext('2d');
+    var chart = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: ['Позиции'],

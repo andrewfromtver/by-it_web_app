@@ -10,17 +10,21 @@ function addItem() {
 }
 
 function delItem(id) {
-  let type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'item';
+  var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'item';
 
   if (type == 'item') {
     document.getElementById(id).remove();
-    itemsList = itemsList.filter(item => item.id != id);
+    itemsList = itemsList.filter(function (item) {
+      return item.id != id;
+    });
     localStorage.setItem('itemsList', JSON.stringify(itemsList));
     admin();
   }
 
   if (type == 'onlyNotyf') {
-    userNotifications = userNotifications.filter(item => item.content.id != id);
+    userNotifications = userNotifications.filter(function (item) {
+      return item.content.id != id;
+    });
     localStorage.setItem('userNotifications', JSON.stringify(userNotifications));
     main();
   }
@@ -32,7 +36,7 @@ function delItem(id) {
 }
 
 function check(id) {
-  const element = document.getElementById(id).style;
+  var element = document.getElementById(id).style;
 
   if (element.textDecoration == 'line-through' && element.opacity == '0.45') {
     element.textDecoration = '';
@@ -47,16 +51,16 @@ function check(id) {
   }
 
   document.querySelector('.content').innerHTML = "\n        <p>\u041E\u0441\u043D\u043E\u0432\u043D\u044B\u0435 \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u0438</p>\n        <div class=\"chart\">\n            <canvas id=\"statChart\"></canvas>\n        </div>\n        <button style=\"width: 94%; margin: 3%; background-color: #fba29e;\"\n            onclick=\"logout()\">\n                \u0412\u044B\u0439\u0442\u0438\n        </button>\n    ";
-  const itemsCollection = document.querySelector('.user__table').rows;
-  const qty = itemsCollection.length;
+  var itemsCollection = document.querySelector('.user__table').rows;
+  var qty = itemsCollection.length;
   var itemsQty = 0;
 
-  for (let index = 0; index < qty; index++) {
+  for (var index = 0; index < qty; index++) {
     itemsQty += Number(document.querySelector('.user__table').rows[index].querySelectorAll('td')[1].innerText);
   }
 
-  const ctx = document.getElementById('statChart').getContext('2d');
-  const chart = new Chart(ctx, {
+  var ctx = document.getElementById('statChart').getContext('2d');
+  var chart = new Chart(ctx, {
     type: 'bar',
     data: {
       labels: ['Позиции'],
@@ -99,16 +103,18 @@ function useList(id) {
 }
 
 function confirmAction(save) {
-  let type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-  let id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+  var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  var id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
-  const generateId = () => "".concat(Math.round(Math.random() * 1e8).toString(16));
+  var generateId = function generateId() {
+    return "".concat(Math.round(Math.random() * 1e8).toString(16));
+  };
 
   if (save == true) {
     if (!type) {
-      const itemName = document.querySelector('.name').value;
-      const itemQty = document.querySelector('.qty').value;
-      const measureUnit = document.querySelector('.unit').value;
+      var itemName = document.querySelector('.name').value;
+      var itemQty = document.querySelector('.qty').value;
+      var measureUnit = document.querySelector('.unit').value;
 
       if (itemName.length > 0 & itemQty.length > 0) {
         itemsList.push({
@@ -144,7 +150,9 @@ function confirmAction(save) {
     }
 
     if (type == 'loadList') {
-      itemsList = savedList.filter(item => item.id == id)[0].list;
+      itemsList = savedList.filter(function (item) {
+        return item.id == id;
+      })[0].list;
       localStorage.setItem('itemsList', JSON.stringify(itemsList));
       document.querySelector('.add__placeholder').remove();
       admin();
@@ -153,8 +161,12 @@ function confirmAction(save) {
 
     if (type == 'delList') {
       document.getElementById(id).remove();
-      savedList = savedList.filter(item => item.id != id);
-      userNotifications = userNotifications.filter(item => item.content.id != id);
+      savedList = savedList.filter(function (item) {
+        return item.id != id;
+      });
+      userNotifications = userNotifications.filter(function (item) {
+        return item.content.id != id;
+      });
       localStorage.setItem('savedList', JSON.stringify(savedList));
       localStorage.setItem('userNotifications', JSON.stringify(userNotifications));
       document.querySelector('.add__placeholder').remove();
