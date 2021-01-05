@@ -118,7 +118,7 @@ thead {
 }
 td {
     background-color: #fff;
-    font-size: 17px;
+    font-size: 16px;
     padding: 7px 15px;
     box-shadow: 0px 2px 10px #aaa;
 }
@@ -126,15 +126,15 @@ h1 {
     background-color: #fff;
     width: 94%;
     text-align: center;
-    margin: 20px auto;
-    font-size: 26px;
+    margin: 10px auto;
+    font-size: 22px;
     padding: 5px 0;
 }
 p {
     background-color: #fff;
     width: 94%;
     text-align: center;
-    margin: 20px auto;
+    margin: 10px auto;
     font-size: 18px;
     padding: 12px 0;
 }
