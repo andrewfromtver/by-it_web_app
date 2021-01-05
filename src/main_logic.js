@@ -125,7 +125,7 @@ function check(id) {
         </div>
         <button style="width: 94%; margin: 3%; background-color: #fba29e;"
             onclick="logout()">
-                Выйти
+                Завершить покупки
         </button>
     `;
     const itemsCollection = document.querySelector('.user__table').rows;

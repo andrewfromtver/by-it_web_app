@@ -50,7 +50,7 @@ function check(id) {
     selectedItems += Number(document.getElementById(id).querySelectorAll('td')[1].innerText);
   }
 
-  document.querySelector('.content').innerHTML = "\n        <p>\u041E\u0441\u043D\u043E\u0432\u043D\u044B\u0435 \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u0438</p>\n        <div class=\"chart\">\n            <canvas id=\"statChart\"></canvas>\n        </div>\n        <button style=\"width: 94%; margin: 3%; background-color: #fba29e;\"\n            onclick=\"logout()\">\n                \u0412\u044B\u0439\u0442\u0438\n        </button>\n    ";
+  document.querySelector('.content').innerHTML = "\n        <p>\u041E\u0441\u043D\u043E\u0432\u043D\u044B\u0435 \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u0438</p>\n        <div class=\"chart\">\n            <canvas id=\"statChart\"></canvas>\n        </div>\n        <button style=\"width: 94%; margin: 3%; background-color: #fba29e;\"\n            onclick=\"logout()\">\n                \u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C \u043F\u043E\u043A\u0443\u043F\u043A\u0438\n        </button>\n    ";
   var itemsCollection = document.querySelector('.user__table').rows;
   var qty = itemsCollection.length;
   var itemsQty = 0;
