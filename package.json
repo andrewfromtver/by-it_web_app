@@ -1,0 +1,13 @@
+{
+  "name": "by-it_web_app",
+  "description": "",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "babel src -d production/js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11"
+  }
+}
