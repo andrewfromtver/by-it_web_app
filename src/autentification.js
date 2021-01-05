@@ -29,7 +29,6 @@ function logout(type = 'none') {
         if (type == 'none') {
             if (savedList.length > 0) {
                 blurUi(true);
-                navigator.vibrate(75);
                 document.querySelector('body').innerHTML += `
                     <div class="add__placeholder">
                         <div class="add">
