@@ -175,7 +175,7 @@ function confirmAction(save) {
     }
 
     if (type == 'assignList') {
-      var message = document.querySelector('.message').value || '¯|_(ツ)_|¯';
+      var message = document.querySelector('.message').value || 'Комментарий отсутствует';
       var notification = "\n                {\"id\": \"".concat(username, "\",\n                \"content\": {\"id\": \"").concat(id, "\",\n                \"content\": {\"from\": \"").concat(username, "\", \"list\": \"").concat(id, "\", \"message\": \"").concat(message, "\"}}}\n            ");
       userNotifications.push(JSON.parse(notification));
       localStorage.setItem('userNotifications', JSON.stringify(userNotifications));

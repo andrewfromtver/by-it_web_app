@@ -306,7 +306,7 @@ function confirmAction(save, type = null, id = null) {
         }
         if (type == 'assignList') {
             var message = document.querySelector('.message')
-                .value  || '¯|_(ツ)_|¯';
+                .value  || 'Комментарий отсутствует';
             var notification = `
                 {"id": "${username}",
                 "content": {"id": "${id}",
