@@ -169,7 +169,7 @@ function warnPopup(type = 'main') {
             </div>
         </div>
         <div class="error">
-            <p style="color: tomato; width: 400px; max-width: 95vw;">
+            <p style="color: tomato; width: 400px; max-width: 95vw; font-size: 14px;">
                 <code>Текущий прогресс будет утерян</code>
             </p>
         </div>

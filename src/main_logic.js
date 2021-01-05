@@ -93,7 +93,7 @@ function delItem(id, type = 'item') {
                     </div>
                 </div>
                 <div class="error">
-                    <p style="color: tomato; width: 400px; max-width: 95vw;">
+                    <p style="color: tomato; width: 400px; max-width: 95vw; font-size: 14px;">
                         <code>Список также будет удалён из напоминаний</code>
                     </p>
                 </div>
@@ -247,7 +247,7 @@ function useList(id) {
             </div>
         </div>
         <div class="error">
-            <p style="color: tomato; width: 400px; max-width: 95vw;">
+            <p style="color: tomato; width: 400px; max-width: 95vw; font-size: 14px;">
                 <code>Текущий список покупок будет изменён</code>
             </p>
         </div>
@@ -272,7 +272,7 @@ function confirmAction(save, type = null, id = null) {
             }
             else {
                 document.querySelector('.error').innerHTML = `
-                    <p style="color: tomato; position: absolute; width: 400px; max-width: 95vw;"">
+                    <p style="color: tomato; position: absolute; width: 400px; max-width: 95vw; font-size: 14;"">
                         <code>Заполните все поля<code/>
                     </p>
                 `;
@@ -289,7 +289,7 @@ function confirmAction(save, type = null, id = null) {
             }
             else {
                 document.querySelector('.error').innerHTML = `
-                    <p style="color: tomato; position: absolute; width: 400px; max-width: 95vw;">
+                    <p style="color: tomato; position: absolute; width: 400px; max-width: 95vw; font-size: 14;">
                         <code>Укажите название списка</code>
                     </p>
                 `;
