@@ -181,3 +181,30 @@ function errorCleaner() {
     document.querySelector('.error').innerHTML = '';
 }
 /* Back button */
+function initApp() {
+    document.body.innerHTML = `
+        <div class="login__placeholder">
+            <div class="login">
+                <h1>Список покупок</h1>
+                <p style="font-size: 14px;">
+                    <code>1 - составляйте списки покупок<br>
+                    <br>
+                    2 - отмечайте покупки в списке<br>
+                    <br>
+                    3 - сохраняйте избраные списки<br>
+                    <br>
+                    4 - устанавливайте напоминания</code>
+                </p>
+                <div style="display: flex; flex-direction: row; justify-content: center;">
+                    <button
+                        style="background-color: #5cd8dc; width: 80%;"
+                        onclick="login(true)"
+                    >
+                        Перейти к покупкам
+                    </button>
+                </div>
+                <div class="error"></div>
+            </div>
+        </div>
+    `;
+}

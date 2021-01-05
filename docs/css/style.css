@@ -9,6 +9,40 @@ body {
     font-family: 'MyWebFont', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: url("../img/background.jpg");
 }
+.splash {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.splash > img {
+    height: 250px;
+    width: 300px;
+    margin: 0 auto;
+    -webkit-animation: 1.2s splash ease-in-out infinite;
+    animation: 1.2s splash ease-in-out infinite;
+}
+@-webkit-keyframes splash {
+    0%, 50%, 100% {
+      -webkit-transform: scale(0.75);
+              transform: scale(0.75);
+    }
+    50% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+}
+@keyframes splash {
+    0%, 50%, 100% {
+      -webkit-transform: scale(0.75);
+              transform: scale(0.75);
+    }
+    50% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+}
 .app__data {
     min-height: calc(var(--vh, 1vh) * 100 - 75px);
 }
