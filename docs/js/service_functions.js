@@ -35,10 +35,10 @@ function blurUi() {
   var toggle = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
   if (toggle) {
-    document.querySelector('.navbar').style = 'filter: blur(5px); opacity: 0.75;';
-    document.querySelector('.container').style = 'filter: blur(5px); opacity: 0.75;';
-    document.querySelector('.content').style = 'filter: blur(5px); opacity: 0.75;';
-    document.querySelector('.footer').style = 'filter: blur(5px); opacity: 0.75;';
+    document.querySelector('.navbar').style = 'filter: blur(8px); opacity: 0.7;';
+    document.querySelector('.container').style = 'filter: blur(8px); opacity: 0.7;';
+    document.querySelector('.content').style = 'filter: blur(8px); opacity: 0.7;';
+    document.querySelector('.footer').style = 'filter: blur(8px); opacity: 0.7;';
   } else {
     document.querySelector('.navbar').style = '';
     document.querySelector('.container').style = '';
@@ -172,3 +172,4 @@ function warnPopup() {
 function errorCleaner() {
   document.querySelector('.error').innerHTML = '';
 }
+/* Back button */

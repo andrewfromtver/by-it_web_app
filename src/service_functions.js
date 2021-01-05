@@ -180,3 +180,4 @@ function warnPopup(type = 'main') {
 function errorCleaner() {
     document.querySelector('.error').innerHTML = '';
 }
+/* Back button */

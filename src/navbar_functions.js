@@ -26,7 +26,7 @@ function main() {
             <div class="container">
                 <h1>${username}</h1>
                 <div class="main__img">
-                    <img src="./img/${Math.floor(Math.random() * Math.floor(4))}.gif" alt="main">
+                    <img src="./img/logo.png" alt="main">
                 </div>
                 <p>Сервис для составления списка покупок</p>
             </div>
@@ -34,7 +34,7 @@ function main() {
                 <button 
                     style="width: 94%; margin: 3%; background-color: #fba29e;"
                     onclick="logout()">
-                        Завершить покупки
+                        Выйти
                 </button>
             </div>
         </div>
@@ -53,7 +53,7 @@ function main() {
             <button
                 style="width: 94%; margin: 3%; background-color: #fba29e;"
                 onclick="logout()">
-                    Завершить покупки
+                    Выйти
             </button>
         `;
         document.querySelector('.content').innerHTML = notificationInner;
@@ -140,7 +140,7 @@ function admin() {
     document.querySelector('.content').innerHTML = `
         <button style="width: 94%; margin: 3%; background-color: #fba29e;"
             onclick="logout()">
-                Завершить покупки
+                Выйти
         </button>
     `;
     if (document.querySelector('.admin__table').rows.length > 0) {
@@ -151,7 +151,7 @@ function admin() {
             </div>
             <button style="width: 94%; margin: 3%; background-color: #fba29e;"
                 onclick="logout()">
-                    Завершить покупки
+                    Выйти
             </button>
         `;
         const itemsCollection = document.querySelector('.admin__table').rows;
@@ -235,7 +235,7 @@ function user() {
     document.querySelector('.content').innerHTML = `
         <button style="width: 94%; margin: 3%; background-color: #fba29e;"
             onclick="logout()">
-                Завершить покупки
+                Выйти
         </button>
     `;
     if (document.querySelector('.user__table').rows.length > 0) {
@@ -246,7 +246,7 @@ function user() {
             </div>
             <button style="width: 94%; margin: 3%; background-color: #fba29e;"
                 onclick="logout()">
-                    Завершить покупки
+                    Выйти
             </button>
         `;
         const itemsCollection = document.querySelector('.user__table').rows;
@@ -367,7 +367,7 @@ function toplist() {
     document.querySelector('.content').innerHTML = `
         <button style="width: 94%; margin: 3%; background-color: #fba29e;"
             onclick="logout()">
-                Завершить покупки
+                Выйти
         </button>
     `;
     activeitem('top');
