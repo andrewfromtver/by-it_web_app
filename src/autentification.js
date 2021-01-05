@@ -29,6 +29,7 @@ function logout(type = 'none') {
         if (type == 'none') {
             if (savedList.length > 0) {
                 blurUi(true);
+                navigator.vibrate(75);
                 document.querySelector('body').innerHTML += `
                     <div class="add__placeholder">
                         <div class="add">
@@ -65,7 +66,6 @@ function logout(type = 'none') {
                 localStorage.removeItem('username');
                 setTimeout(function() {
                     window.location.reload();
-                    navigator.vibrate(75);
                 }, 1000);
             }
         }
@@ -81,8 +81,7 @@ function logout(type = 'none') {
             username = '';
             localStorage.removeItem('username');
             setTimeout(function() {
-                window.location.reload();
-                navigator.vibrate(75);
+                window.location.reload()
             }, 3000);
         }
         else if (type == 'no') {
@@ -96,8 +95,7 @@ function logout(type = 'none') {
             username = '';
             localStorage.removeItem('username');
             setTimeout(function() {
-                window.location.reload();
-                navigator.vibrate(75);
+                window.location.reload()
             }, 1000);
         }
     }
