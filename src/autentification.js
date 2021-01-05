@@ -65,7 +65,6 @@ function logout(type = 'none') {
                 localStorage.removeItem('username');
                 setTimeout(function() {
                     window.location.reload();
-                    window.close();
                 }, 1000);
             }
         }
@@ -82,7 +81,6 @@ function logout(type = 'none') {
             localStorage.removeItem('username');
             setTimeout(function() {
                 window.location.reload();
-                window.close();
             }, 3000);
         }
         else if (type == 'no') {
@@ -97,7 +95,6 @@ function logout(type = 'none') {
             localStorage.removeItem('username');
             setTimeout(function() {
                 window.location.reload();
-                window.close();
             }, 1000);
         }
     }
