@@ -47,6 +47,7 @@ function logout() {
         localStorage.removeItem('username');
         setTimeout(function () {
           window.location.reload();
+          navigator.app.exitApp();
         }, 1000);
       }
     } else if (type == 'yes') {
@@ -56,6 +57,7 @@ function logout() {
       localStorage.removeItem('username');
       setTimeout(function () {
         window.location.reload();
+        navigator.app.exitApp();
       }, 3000);
     } else if (type == 'no') {
       document.querySelector('#no').innerHTML = "\n                <div>\n                    <div style=\"display: flex; justify-content: center;\">\n                        <div class=\"dot-loader\"></div>\n                    </div>\n                </div>\n            ";
@@ -63,6 +65,7 @@ function logout() {
       localStorage.removeItem('username');
       setTimeout(function () {
         window.location.reload();
+        navigator.app.exitApp();
       }, 1000);
     }
   }

@@ -63,7 +63,7 @@ function logout(type = 'none') {
                 `;
                 username = '';
                 localStorage.removeItem('username');
-                setTimeout(function() {window.location.reload()}, 1000);
+                setTimeout(function() {window.location.reload();navigator.app.exitApp();}, 1000);
             }
         }
         else if (type == 'yes') {
@@ -77,7 +77,7 @@ function logout(type = 'none') {
             sendJson(savedList);
             username = '';
             localStorage.removeItem('username');
-            setTimeout(function() {window.location.reload()}, 3000);
+            setTimeout(function() {window.location.reload();navigator.app.exitApp();}, 3000);
         }
         else if (type == 'no') {
             document.querySelector('#no').innerHTML = `
@@ -89,7 +89,7 @@ function logout(type = 'none') {
             `;
             username = '';
             localStorage.removeItem('username');
-            setTimeout(function() {window.location.reload()}, 1000);
+            setTimeout(function() {window.location.reload();navigator.app.exitApp();}, 1000);
         }
     }
 }
