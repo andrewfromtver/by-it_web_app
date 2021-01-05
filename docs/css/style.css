@@ -1,8 +1,7 @@
 @font-face {
     font-family: 'MyWebFont';
     src: url('../font/RussoOne-Regular.ttf') format('truetype');
-  }
-
+}
 body {
     background-color: #ccc;
     margin: 0;
@@ -119,7 +118,7 @@ thead {
 }
 td {
     background-color: #fff;
-    font-size: 14px;
+    font-size: 17px;
     padding: 7px 15px;
     box-shadow: 0px 2px 10px #aaa;
 }
