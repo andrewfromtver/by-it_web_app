@@ -56,7 +56,7 @@ function addItem() {
     </div>
     `;
     setInputFilter(document.getElementById("qtyInput"), function(value) {
-        return /^\d2\,?\d3$/.test(value);
+        return /^\d*\,?\d*$/.test(value);
     });
 }
 function delItem(id, type = 'item') {
