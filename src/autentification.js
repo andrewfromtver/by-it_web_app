@@ -1,7 +1,7 @@
 /* Login/logout */
 window.onload = function() {
     login();
-    setTimeout(initApp, 3000);
+    setTimeout(initApp, 4500);
 };
 function login(firstLoad = false) {
     if (firstLoad) {

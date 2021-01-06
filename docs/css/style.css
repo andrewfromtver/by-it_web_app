@@ -22,13 +22,13 @@ body {
     max-height: 250px;
     width: 300px;
     margin: 0 auto;
-    -webkit-animation: 1.2s splash ease-in-out infinite;
-    animation: 1.2s splash ease-in-out infinite;
+    -webkit-animation: 2.5s splash ease-in-out infinite;
+    animation: 2.5s splash ease-in-out infinite;
 }
 @-webkit-keyframes splash {
     0%, 50%, 100% {
-      -webkit-transform: scale(0.75);
-              transform: scale(0.75);
+      -webkit-transform: scale(0.85);
+              transform: scale(0.85);
     }
     50% {
       -webkit-transform: scale(1);
@@ -37,8 +37,8 @@ body {
 }
 @keyframes splash {
     0%, 50%, 100% {
-      -webkit-transform: scale(0.75);
-              transform: scale(0.75);
+      -webkit-transform: scale(0.85);
+              transform: scale(0.85);
     }
     50% {
       -webkit-transform: scale(1);
