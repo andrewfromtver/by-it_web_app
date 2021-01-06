@@ -25,7 +25,6 @@ function addItem() {
                                 class="add__input qty"
                                 id="qtyInput"
                                 type="text" inputmode="numeric"
-                                maxlength="6"
                                 oninput="errorCleaner()"
                             >
                             <span class="omrs-input-label">Кол-во</span>
@@ -57,7 +56,7 @@ function addItem() {
     </div>
     `;
     setInputFilter(document.getElementById("qtyInput"), function(value) {
-        return /^\d*\d*$/.test(value);
+        return /^\d2\,?\d3$/.test(value);
     });
 }
 function delItem(id, type = 'item') {
