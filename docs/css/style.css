@@ -2,12 +2,12 @@
     font-family: 'MyWebFont';
     src: url('../font/RussoOne-Regular.ttf') format('truetype');
 }
-body {
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
+body::-webkit-scrollbar {
+    display: none;
 }
-body::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 body {
     background-color: #333;
