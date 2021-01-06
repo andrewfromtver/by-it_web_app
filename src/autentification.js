@@ -65,7 +65,10 @@ function logout(type = 'none') {
                 username = '';
                 localStorage.removeItem('username');
                 setTimeout(function() {
-                    window.location.reload();
+                if (navigator.app) {
+                    navigator.app.exitApp();
+                }
+                window.location.reload();
                 }, 1000);
             }
         }
@@ -81,7 +84,10 @@ function logout(type = 'none') {
             username = '';
             localStorage.removeItem('username');
             setTimeout(function() {
-                window.location.reload();
+            if (navigator.app) {    
+                navigator.app.exitApp();
+            }
+            window.location.reload();
             }, 3000);
         }
         else if (type == 'no') {
@@ -95,7 +101,10 @@ function logout(type = 'none') {
             username = '';
             localStorage.removeItem('username');
             setTimeout(function() {
-                window.location.reload();
+            if (navigator.app) {
+                navigator.app.exitApp();
+            }
+            window.location.reload();
             }, 1000);
         }
     }

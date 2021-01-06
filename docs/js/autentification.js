@@ -47,6 +47,10 @@ function logout() {
         username = '';
         localStorage.removeItem('username');
         setTimeout(function () {
+          if (navigator.app) {
+            navigator.app.exitApp();
+          }
+
           window.location.reload();
         }, 1000);
       }
@@ -56,6 +60,10 @@ function logout() {
       username = '';
       localStorage.removeItem('username');
       setTimeout(function () {
+        if (navigator.app) {
+          navigator.app.exitApp();
+        }
+
         window.location.reload();
       }, 3000);
     } else if (type == 'no') {
@@ -63,6 +71,10 @@ function logout() {
       username = '';
       localStorage.removeItem('username');
       setTimeout(function () {
+        if (navigator.app) {
+          navigator.app.exitApp();
+        }
+
         window.location.reload();
       }, 1000);
     }
