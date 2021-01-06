@@ -23,6 +23,7 @@ function addItem() {
                             <input
                                 required
                                 class="add__input qty"
+                                maxlength="5"
                                 id="qtyInput"
                                 type="text" inputmode="numeric"
                                 oninput="errorCleaner()"
