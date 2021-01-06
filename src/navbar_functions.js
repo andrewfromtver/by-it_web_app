@@ -34,7 +34,7 @@ function main() {
                 <button 
                     style="width: 94%; margin: 3%; background-color: #fba29e;"
                     onclick="logout()">
-                        Выйти
+                        Закончить шоппинг
                 </button>
             </div>
         </div>
@@ -53,7 +53,7 @@ function main() {
             <button
                 style="width: 94%; margin: 3%; background-color: #fba29e;"
                 onclick="logout()">
-                    Выйти
+                    Закончить шоппинг
             </button>
         `;
         document.querySelector('.content').innerHTML = notificationInner;
@@ -140,7 +140,7 @@ function admin() {
     document.querySelector('.content').innerHTML = `
         <button style="width: 94%; margin: 3%; background-color: #fba29e;"
             onclick="logout()">
-                Выйти
+                Закончить шоппинг
         </button>
     `;
     if (document.querySelector('.admin__table').rows.length > 0) {
@@ -151,7 +151,7 @@ function admin() {
             </div>
             <button style="width: 94%; margin: 3%; background-color: #fba29e;"
                 onclick="logout()">
-                    Выйти
+                    Закончить шоппинг
             </button>
         `;
         const itemsCollection = document.querySelector('.admin__table').rows;
@@ -235,7 +235,7 @@ function user() {
     document.querySelector('.content').innerHTML = `
         <button style="width: 94%; margin: 3%; background-color: #fba29e;"
             onclick="logout()">
-                Выйти
+                Закончить шоппинг
         </button>
     `;
     if (document.querySelector('.user__table').rows.length > 0) {
@@ -246,7 +246,7 @@ function user() {
             </div>
             <button style="width: 94%; margin: 3%; background-color: #fba29e;"
                 onclick="logout()">
-                    Выйти
+                    Закончить шоппинг
             </button>
         `;
         const itemsCollection = document.querySelector('.user__table').rows;
@@ -367,7 +367,7 @@ function toplist() {
     document.querySelector('.content').innerHTML = `
         <button style="width: 94%; margin: 3%; background-color: #fba29e;"
             onclick="logout()">
-                Выйти
+                Закончить шоппинг
         </button>
     `;
     activeitem('top');

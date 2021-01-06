@@ -68,11 +68,12 @@ function logout(type = 'none') {
                 if (navigator.app) {
                     navigator.app.exitApp();
                 }
-                window.location.reload();
+                initApp();
                 }, 1000);
             }
         }
         else if (type == 'yes') {
+            selectedRows = 0;
             document.querySelector('#yes').innerHTML = `
                 <div>
                     <div style="display: flex; justify-content: center;">
@@ -87,10 +88,11 @@ function logout(type = 'none') {
             if (navigator.app) {    
                 navigator.app.exitApp();
             }
-            window.location.reload();
+            initApp();
             }, 3000);
         }
         else if (type == 'no') {
+            selectedRows = 0;
             document.querySelector('#no').innerHTML = `
                 <div>
                     <div style="display: flex; justify-content: center;">
@@ -104,7 +106,7 @@ function logout(type = 'none') {
             if (navigator.app) {
                 navigator.app.exitApp();
             }
-            window.location.reload();
+            initApp();
             }, 1000);
         }
     }

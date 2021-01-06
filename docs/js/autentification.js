@@ -51,10 +51,11 @@ function logout() {
             navigator.app.exitApp();
           }
 
-          window.location.reload();
+          initApp();
         }, 1000);
       }
     } else if (type == 'yes') {
+      selectedRows = 0;
       document.querySelector('#yes').innerHTML = "\n                <div>\n                    <div style=\"display: flex; justify-content: center;\">\n                        <div class=\"dot-loader\"></div>\n                    </div>\n                </div>\n            ";
       sendJson(savedList);
       username = '';
@@ -64,9 +65,10 @@ function logout() {
           navigator.app.exitApp();
         }
 
-        window.location.reload();
+        initApp();
       }, 3000);
     } else if (type == 'no') {
+      selectedRows = 0;
       document.querySelector('#no').innerHTML = "\n                <div>\n                    <div style=\"display: flex; justify-content: center;\">\n                        <div class=\"dot-loader\"></div>\n                    </div>\n                </div>\n            ";
       username = '';
       localStorage.removeItem('username');
@@ -75,7 +77,7 @@ function logout() {
           navigator.app.exitApp();
         }
 
-        window.location.reload();
+        initApp();
       }, 1000);
     }
   }
