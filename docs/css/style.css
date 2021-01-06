@@ -18,9 +18,10 @@ body {
 }
 .splash > img {
     height: 95vh;
-    max-width: 95vw;
-    max-height: 250px;
-    width: 300px;
+    width: 95vw;
+    max-height: 200px;
+    max-width: 225px;
+    opacity: 0.75;
     margin: 0 auto;
     -webkit-animation: 2.5s splash ease-in-out infinite;
     animation: 2.5s splash ease-in-out infinite;
@@ -282,7 +283,8 @@ select {
 }
 .main__img > img {
     margin-top: 7px;
-    height: 245px;
+    height: 200px;
+    max-width: 95vw;
     opacity: 0.95;
 }
 .item__name {
