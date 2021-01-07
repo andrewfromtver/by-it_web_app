@@ -32,6 +32,11 @@ function delItem(id) {
 
   if (type == 'list') {
     document.querySelector('body').innerHTML += del_item_popup;
+
+    document.querySelector('#delListById').onclick = function () {
+      confirmAction(true, 'delList', id);
+    };
+
     blurUi(true);
   }
 }
@@ -96,12 +101,26 @@ function saveList() {
 function assignList(id) {
   assignListId = id;
   document.querySelector('body').innerHTML += assign_list_popup;
+
+  document.querySelector('#assignListById').onclick = function () {
+    confirmAction(true, 'assignList', id);
+  };
+
   blurUi(true);
 }
 
 function useList(id) {
   useListId - id;
   document.querySelector('body').innerHTML += use_list_popup;
+
+  document.querySelector('#useListById').onclick = function () {
+    confirmAction(true, 'loadList', id);
+  };
+
+  document.querySelector('#doNotUseListById').onclick = function () {
+    confirmAction(false, placeSwitch);
+  };
+
   blurUi(true);
 }
 

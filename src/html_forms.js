@@ -250,7 +250,7 @@ const del_item_popup = `
             <h1>Удалить список</h1>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button style="background-color: #fba29e;"
-                    onclick="confirmAction(true, 'delList', '${delItemId}')">
+                    id="delListById">
                         Удалить
                 </button>
                 <button style="background-color: #5cd8dc;"
@@ -312,7 +312,7 @@ const assign_list_popup = `
                 </div>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button style="background-color: #5cd8dc;"
-                    onclick="confirmAction(true, 'assignList', '${assignListId}')">
+                    id="assignListById">
                         Добавить
                 </button>
                 <button style="background-color: #fba29e;"
@@ -330,11 +330,11 @@ const use_list_popup = `
             <h1>Загрузить список</h1>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button style="background-color: #5cd8dc;"
-                    onclick="confirmAction(true, 'loadList', '${useListId}')">
+                    id="useListById">
                         Загрузить
                 </button>
                 <button style="background-color: #fba29e;"
-                    onclick="confirmAction(false, '${placeSwitch}')">
+                    id="doNotUseListById">
                         Отмена
                 </button>
             </div>

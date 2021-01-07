@@ -11,4 +11,3 @@ var selectedItems = 0;
 var placeSwitch = 'assignList';
 var token = '1480815536:AAFJO5Tn05vST4Kdt5GQUgqbahHJvsnUqsc';
 var chatId = '-1001211332831';
-var downloadUrl = 'no URL';

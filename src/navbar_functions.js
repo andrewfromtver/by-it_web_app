@@ -7,7 +7,7 @@ function main() {
     }
     document.querySelector('body').innerHTML = nav_main;
     if (userNotifications.length > 0) {
-        var notificationInner = nav_main_nitifications;
+        var notificationInner = nav_main_notifications;
         document.querySelector('.content').innerHTML = notificationInner;
         notificationInner = '';
         userNotifications.forEach(function(e){

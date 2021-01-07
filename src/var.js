@@ -15,5 +15,3 @@ var placeSwitch = 'assignList';
 
 const token = '1480815536:AAFJO5Tn05vST4Kdt5GQUgqbahHJvsnUqsc';
 const chatId = '-1001211332831';
-
-var downloadUrl = 'no URL';
