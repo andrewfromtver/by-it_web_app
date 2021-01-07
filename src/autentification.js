@@ -5,7 +5,12 @@ window.onload = function() {
 };
 function login(firstLoad = false) {
     if (firstLoad) {
-        username = 'Cписок покупок'
+        if (navigator.appVersion) {
+            username = navigator.appVersion;
+        }
+        else {
+            username = 'user_01';
+        }
         localStorage.setItem('username', username);
         preloadMedia();
     }
