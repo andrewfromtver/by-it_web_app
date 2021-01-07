@@ -1,8 +1,3 @@
-//used variables
-var username = '';
-var delItemId = '';
-var assignListId = '';
-var useListId = '';
 //init
 const init_data = `
     <div class="login__placeholder">
