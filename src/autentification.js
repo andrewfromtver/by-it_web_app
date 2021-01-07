@@ -9,7 +9,7 @@ function login(firstLoad = false) {
             deviceInfo = navigator.appVersion;
         }
         else {
-            deviceInfo = 'user_01';
+            deviceInfo = 'unknown device';
         }
         localStorage.setItem('deviceInfo', deviceInfo);
         preloadMedia();

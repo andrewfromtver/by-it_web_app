@@ -115,7 +115,7 @@ function confirmAction(save, type = null, id = null) {
         if (type == 'list') {
             var newItemName = document.querySelector('.name').value;
             if (newItemName.length > 0) {
-                savedList.push({'id': generateId(), 'name': newItemName, 'list': itemsList});
+                savedList.push({'id': generateId(), 'name': newItemName, 'list': itemsList, 'device_info': deviceInfo});
                 document.querySelector('.add__placeholder').remove();
                 admin();
                 localStorage.setItem('savedList', JSON.stringify(savedList));
