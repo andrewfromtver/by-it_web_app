@@ -1,7 +1,6 @@
 "use strict";
 
 var vh = window.innerHeight * 0.01;
-var username = '';
 var activetab = '';
 var userNotifications = [];
 var apiKey = '1z18DEIrhP29IUavcImuCLoKamZ1BRzx-PWNfL4dyQzk';

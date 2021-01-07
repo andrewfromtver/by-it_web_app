@@ -1,66 +1,13 @@
 /* Itesm processing */
 function addItem() {
     blurUi(true);
-    document.querySelector('body').innerHTML += `
-    <div class="add__placeholder">
-        <div class="add">
-            <h1>В список покупок</h1>
-                <div class="omrs-input-group">
-                    <label class="omrs-input-underlined">
-                    <input
-                        required
-                        class="add__input name"
-                        type="text"
-                        maxlength="23"
-                        oninput="errorCleaner()"
-                    >
-                    <span class="omrs-input-label">Наименование</span>
-                </div>
-            <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                <div style="margin-left: 3%; width: 47%;">
-                        <div class="omrs-input-group">
-                            <label class="omrs-input-underlined">
-                            <input
-                                required
-                                class="add__input qty"
-                                maxlength="5"
-                                id="qtyInput"
-                                type="text" inputmode="numeric"
-                                oninput="errorCleaner()"
-                            >
-                            <span class="omrs-input-label">Кол-во</span>
-                        </div>
-                </div>
-                <select style="width: 41%; margin-right: 6%;"
-                    class="add__input unit"
-                    placeholder="Имя пользователя"
-                    onchange="errorCleaner()">
-                        <option id="0">шт</option>
-                        <option id="1">кг</option>
-                        <option id="2">г</option>
-                        <option id="3">л</option>
-                        <option id="4">мл</option>
-                </select>
-            </div>
-            <div style="display: flex; flex-direction: row; justify-content: center;">
-                <button style="background-color: #5cd8dc;"
-                    onclick="confirmAction(true)">
-                        Добавить
-                </button>
-                <button style="background-color: #fba29e;"
-                    onclick="confirmAction(false)">
-                        Отмена
-                </button>
-            </div>
-            <div class="error"></div>
-        </div>
-    </div>
-    `;
+    document.querySelector('body').innerHTML += add_item_popup;
     setInputFilter(document.getElementById("qtyInput"), function(value) {
         return /^\d*\,?\d*$/.test(value);
     });
 }
 function delItem(id, type = 'item') {
+    delItemId = id;
     if (type == 'item') {
         document.getElementById(id).remove();
         itemsList =  itemsList.filter(item => item.id != id);
@@ -73,28 +20,7 @@ function delItem(id, type = 'item') {
         main();
     }
     if (type == 'list') {
-        document.querySelector('body').innerHTML += `
-            <div class="add__placeholder">
-                <div class="add">
-                    <h1>Удалить список</h1>
-                    <div style="display: flex; flex-direction: row; justify-content: center;">
-                        <button style="background-color: #fba29e;"
-                            onclick="confirmAction(true, 'delList', '${id}')">
-                                Удалить
-                        </button>
-                        <button style="background-color: #5cd8dc;"
-                            onclick="confirmAction(false, 'loadList')">
-                                Отмена
-                        </button>
-                    </div>
-                </div>
-                <div class="error">
-                    <p style="color: tomato; width: 400px; max-width: 95vw; font-size: 14px;">
-                        <code>Список также будет удалён из напоминаний</code>
-                    </p>
-                </div>
-            </div>
-        `;
+        document.querySelector('body').innerHTML += del_item_popup;
         blurUi(true);
     }
 }
@@ -114,16 +40,7 @@ function check(id) {
         selectedItems += Number(document.getElementById(id)
             .querySelectorAll('td')[1].innerText);
     }
-    document.querySelector('.content').innerHTML = `
-        <p>Основные показатели</p>
-        <div class="chart">
-            <canvas id="statChart"></canvas>
-        </div>
-        <button style="width: 94%; margin: 3%; background-color: #fba29e;"
-            onclick="logout()">
-                Завершить покупки
-        </button>
-    `;
+    document.querySelector('.content').innerHTML = chart_add;
     const itemsCollection = document.querySelector('.user__table').rows;
     const qty = itemsCollection.length;
     var itemsQty = 0;
@@ -159,92 +76,17 @@ function check(id) {
     });
 }
 function saveList() {
-    document.querySelector('body').innerHTML += `
-        <div class="add__placeholder">
-            <div class="add">
-                <h1>Сохранить список</h1>
-                    <div class="omrs-input-group">
-                        <label class="omrs-input-underlined">
-                        <input
-                            required
-                            class="add__input name
-                            type="text"
-                            maxlength="25"
-                            oninput="errorCleaner()"
-                        >
-                        <span class="omrs-input-label">Название</span>
-                    </div>
-                <div style="display: flex; flex-direction: row; justify-content: center;">
-                    <button style="background-color: #5cd8dc;"
-                        onclick="confirmAction(true, 'list')">
-                            Сохранить
-                    </button>
-                    <button style="background-color: #fba29e;"
-                        onclick="confirmAction(false)">
-                            Отмена
-                    </button>
-                </div>
-                <div class="error"></div>
-            </div>
-        </div>
-    `;
+    document.querySelector('body').innerHTML += save_list_popup;
     blurUi(true);
 }
 function assignList(id) {
-    document.querySelector('body').innerHTML += `
-        <div class="add__placeholder">
-            <div class="add">
-                <h1>Добавить напоминание</h1>
-                    <div class="omrs-input-group">
-                        <label class="omrs-input-underlined">
-                        <input
-                            required
-                            class="add__input message"
-                            type="text"
-                            maxlength="75"
-                            oninput="errorCleaner()"
-                        >
-                        <span class="omrs-input-label">Комментарий</span>
-                    </div>
-                <div style="display: flex; flex-direction: row; justify-content: center;">
-                    <button style="background-color: #5cd8dc;"
-                        onclick="confirmAction(true, 'assignList', '${id}')">
-                            Добавить
-                    </button>
-                    <button style="background-color: #fba29e;"
-                        onclick="confirmAction(false, 'loadList')">
-                            Отмена
-                    </button>
-                </div>
-                <div class="error"></div>
-            </div>
-        </div>
-    `;
+    assignListId = id;
+    document.querySelector('body').innerHTML += assign_list_popup;
     blurUi(true);
 }
 function useList(id) {
-    document.querySelector('body').innerHTML += `
-    <div class="add__placeholder">
-        <div class="add">
-            <h1>Загрузить список</h1>
-            <div style="display: flex; flex-direction: row; justify-content: center;">
-                <button style="background-color: #5cd8dc;"
-                    onclick="confirmAction(true, 'loadList', '${id}')">
-                        Загрузить
-                </button>
-                <button style="background-color: #fba29e;"
-                    onclick="confirmAction(false, '${placeSwitch}')">
-                        Отмена
-                </button>
-            </div>
-        </div>
-        <div class="error">
-            <p style="color: tomato; width: 400px; max-width: 95vw; font-size: 14px;">
-                <code>Текущий список покупок будет изменён</code>
-            </p>
-        </div>
-    </div>
-    `;
+    useListId - id;
+    document.querySelector('body').innerHTML += use_list_popup;
     blurUi(true);
 }
 function confirmAction(save, type = null, id = null) {
@@ -263,11 +105,7 @@ function confirmAction(save, type = null, id = null) {
                 blurUi();
             }
             else {
-                document.querySelector('.error').innerHTML = `
-                    <p style="color: tomato; position: absolute; width: 400px; max-width: 95vw; font-size: 14;"">
-                        <code>Заполните все поля<code/>
-                    </p>
-                `;
+                document.querySelector('.error').innerHTML = popup_error;
             }
         }
         if (type == 'list') {
@@ -280,11 +118,7 @@ function confirmAction(save, type = null, id = null) {
                 blurUi();
             }
             else {
-                document.querySelector('.error').innerHTML = `
-                    <p style="color: tomato; position: absolute; width: 400px; max-width: 95vw; font-size: 14;">
-                        <code>Укажите название списка</code>
-                    </p>
-                `;
+                document.querySelector('.error').innerHTML = popup_error;
             }
         }
         if (type == 'loadList') {

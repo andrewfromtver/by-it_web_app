@@ -5,57 +5,9 @@ function main() {
         warnPopup('main');
         return;
     }
-    document.querySelector('body').innerHTML = `
-        <div class="navbar">
-            <div class="navlinks">
-                <div class="navlink" id="main" onclick="main()">
-                    <img class="navlink__img" width="25px" src="./img/home.png">
-                </div>
-                <div class="navlink" id="admin" onclick="admin()">
-                    <img class="navlink__img" width="25px" src="./img/list.png">
-                </div>
-                <div class="navlink" id="user" onclick="user()">
-                    <img class="navlink__img" width="25px" src="./img/buy.png">
-                </div>
-                <div class="navlink" id="top" onclick="toplist()">
-                    <img class="navlink__img" width="25px" src="./img/top.png">
-                </div>
-            </div>
-        </div>
-        <div class="app__data">
-            <div class="container">
-                <h1>${username}</h1>
-                <div class="main__img">
-                    <img src="./img/logo.png" alt="main">
-                </div>
-                <p>Сервис для составления списка покупок</p>
-            </div>
-            <div class="content">
-                <button 
-                    style="width: 94%; margin: 3%; background-color: #fba29e;"
-                    onclick="logout()">
-                        Завершить покупки
-                </button>
-            </div>
-        </div>
-        <div class="footer">Copyright © 2020 Andranik Sarkisyan</div>
-    `;
+    document.querySelector('body').innerHTML = nav_main;
     if (userNotifications.length > 0) {
-        var notificationInner = `
-            <table style="margin-top: 20px;">
-                <thead>
-                    <tr>
-                        <td class="head" colspan="3">Напоминания</td>
-                    </tr>
-                </thead>
-                <tbody class="notification__table"></tbody>
-            </table>
-            <button
-                style="width: 94%; margin: 3%; background-color: #fba29e;"
-                onclick="logout()">
-                    Завершить покупки
-            </button>
-        `;
+        var notificationInner = nav_main_nitifications;
         document.querySelector('.content').innerHTML = notificationInner;
         notificationInner = '';
         userNotifications.forEach(function(e){
@@ -90,23 +42,7 @@ function admin() {
         warnPopup('admin');
         return;
     }
-    document.querySelector('.container').innerHTML = `
-        <div class="admin">
-            <h1>Редактировать список</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <td class="head">Наименование</td>
-                        <td class="head" colspan="2">Кол-во</td>
-                    </tr>
-                </thead>
-                <tbody class="admin__table"></tbody>
-            </table>
-            <div class="add__item">
-                <img onclick="addItem()" src="./img/add.png" alt="add__item">
-            </div>
-        </div>
-    `;
+    document.querySelector('.container').innerHTML = nav_admin;
     if (itemsList.length > 0) {
         var inner = '';
         itemsList.forEach(function(e) {
@@ -129,31 +65,12 @@ function admin() {
         });
         document.querySelector('.admin__table').innerHTML = inner;
         if (itemsList.length > 1) {
-            document.querySelector('.admin').innerHTML += `
-                <button style="width: 94%; margin: 3%; background-color: #5cd8dc;"
-                    onclick="saveList()">
-                        Сохранить список в избранное
-                </button>
-            `;
+            document.querySelector('.admin').innerHTML += nav_admin_save;
         }
     }
-    document.querySelector('.content').innerHTML = `
-        <button style="width: 94%; margin: 3%; background-color: #fba29e;"
-            onclick="logout()">
-                Завершить покупки
-        </button>
-    `;
+    document.querySelector('.content').innerHTML = exit_button;
     if (document.querySelector('.admin__table').rows.length > 0) {
-        document.querySelector('.content').innerHTML = `
-            <p>Основные показатели</p>
-            <div class="chart">
-                <canvas id="statChart"></canvas>
-            </div>
-            <button style="width: 94%; margin: 3%; background-color: #fba29e;"
-                onclick="logout()">
-                    Завершить покупки
-            </button>
-        `;
+        document.querySelector('.content').innerHTML = chart_add;
         const itemsCollection = document.querySelector('.admin__table').rows;
         var qty = itemsCollection.length;
         var itemsQty = 0;
@@ -185,9 +102,7 @@ function admin() {
         });
     }
     else {
-        document.querySelector('.admin__table').innerHTML += `
-            <td colspan="2">¯\\_(ツ)_/¯</td>
-        `;
+        document.querySelector('.admin__table').innerHTML += empty_table;
     }
     activeitem('admin');
 }
@@ -196,20 +111,7 @@ function user() {
         warnPopup('user');
         return;
     }
-    document.querySelector('.container').innerHTML = `
-        <div class="admin" style="margin-bottom: 25px;">
-            <h1>Купить по списку</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <td class="head">Наименование</td>
-                        <td class="head" colspan="2">Кол-во</td>
-                    </tr>
-                </thead>
-                <tbody class="user__table"></tbody>
-            </table>
-        </div>
-    `;
+    document.querySelector('.container').innerHTML = nav_user;
     if (itemsList.length > 0) {
         var inner = '';
         itemsList.forEach(function(e) {
@@ -232,23 +134,9 @@ function user() {
         });
         document.querySelector('.user__table').innerHTML = inner;
     }
-    document.querySelector('.content').innerHTML = `
-        <button style="width: 94%; margin: 3%; background-color: #fba29e;"
-            onclick="logout()">
-                Завершить покупки
-        </button>
-    `;
+    document.querySelector('.content').innerHTML = exit_button;
     if (document.querySelector('.user__table').rows.length > 0) {
-        document.querySelector('.content').innerHTML = `
-            <p>Основные показатели</p>
-            <div class="chart">
-                <canvas id="statChart"></canvas>
-            </div>
-            <button style="width: 94%; margin: 3%; background-color: #fba29e;"
-                onclick="logout()">
-                    Завершить покупки
-            </button>
-        `;
+        document.querySelector('.content').innerHTML = chart_add;
         const itemsCollection = document.querySelector('.user__table').rows;
         const qty = itemsCollection.length;
         var itemsQty = 0;
@@ -284,9 +172,7 @@ function user() {
         });
     }
     else {
-        document.querySelector('.user__table').innerHTML += `
-            <td colspan="2">¯\\_(ツ)_/¯</td>
-        `;
+        document.querySelector('.user__table').innerHTML += empty_table;
     }
     activeitem('user');
 }
@@ -296,19 +182,7 @@ function toplist() {
         warnPopup('toplist');
         return;
     }
-    document.querySelector('.container').innerHTML = `
-        <div class="admin" style="margin-bottom: 25px;">
-            <h1>Сохраненные списки</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <td class="head" colspan="4">Наименование</td>
-                    </tr>
-                </thead>
-                <tbody class="top__table"></tbody>
-            </table>
-        </div>
-    `;
+    document.querySelector('.container').innerHTML = nav_topList;
     if (savedList.length > 0) {
         var inner = '';
         savedList.forEach(function(e) {
@@ -338,14 +212,7 @@ function toplist() {
                     </td>
                 `;
             } else {
-                inner += `
-                    <td style="background-color: #ccc; opacity: 0.5; border-radius: 3px;" class="delete">
-                        <img
-                            class="action__img"
-                            src="./img/assign.png"
-                            alt="delete__item">
-                    </td>
-                `;
+                inner += nav_topList_inactive_assign;
             }
             inner +=`
                     <td class="delete">
@@ -360,15 +227,8 @@ function toplist() {
         document.querySelector('.top__table').innerHTML = inner;
     }
     else {
-        document.querySelector('.top__table').innerHTML += `
-            <td colspan="2">¯\\_(ツ)_/¯</td>
-        `;
+        document.querySelector('.top__table').innerHTML += empty_table;
     }
-    document.querySelector('.content').innerHTML = `
-        <button style="width: 94%; margin: 3%; background-color: #fba29e;"
-            onclick="logout()">
-                Завершить покупки
-        </button>
-    `;
+    document.querySelector('.content').innerHTML = exit_button;
     activeitem('top');
 }

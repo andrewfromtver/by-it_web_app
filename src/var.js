@@ -1,7 +1,5 @@
 const vh = window.innerHeight * 0.01;
 
-var username = '';
-
 var activetab = '';
 
 var userNotifications = [];

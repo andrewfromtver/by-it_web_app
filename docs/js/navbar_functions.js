@@ -9,10 +9,10 @@ function main() {
     return;
   }
 
-  document.querySelector('body').innerHTML = "\n        <div class=\"navbar\">\n            <div class=\"navlinks\">\n                <div class=\"navlink\" id=\"main\" onclick=\"main()\">\n                    <img class=\"navlink__img\" width=\"25px\" src=\"./img/home.png\">\n                </div>\n                <div class=\"navlink\" id=\"admin\" onclick=\"admin()\">\n                    <img class=\"navlink__img\" width=\"25px\" src=\"./img/list.png\">\n                </div>\n                <div class=\"navlink\" id=\"user\" onclick=\"user()\">\n                    <img class=\"navlink__img\" width=\"25px\" src=\"./img/buy.png\">\n                </div>\n                <div class=\"navlink\" id=\"top\" onclick=\"toplist()\">\n                    <img class=\"navlink__img\" width=\"25px\" src=\"./img/top.png\">\n                </div>\n            </div>\n        </div>\n        <div class=\"app__data\">\n            <div class=\"container\">\n                <h1>".concat(username, "</h1>\n                <div class=\"main__img\">\n                    <img src=\"./img/logo.png\" alt=\"main\">\n                </div>\n                <p>\u0421\u0435\u0440\u0432\u0438\u0441 \u0434\u043B\u044F \u0441\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0438\u044F \u0441\u043F\u0438\u0441\u043A\u0430 \u043F\u043E\u043A\u0443\u043F\u043E\u043A</p>\n            </div>\n            <div class=\"content\">\n                <button \n                    style=\"width: 94%; margin: 3%; background-color: #fba29e;\"\n                    onclick=\"logout()\">\n                        \u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C \u043F\u043E\u043A\u0443\u043F\u043A\u0438\n                </button>\n            </div>\n        </div>\n        <div class=\"footer\">Copyright \xA9 2020 Andranik Sarkisyan</div>\n    ");
+  document.querySelector('body').innerHTML = nav_main;
 
   if (userNotifications.length > 0) {
-    var notificationInner = "\n            <table style=\"margin-top: 20px;\">\n                <thead>\n                    <tr>\n                        <td class=\"head\" colspan=\"3\">\u041D\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u043D\u0438\u044F</td>\n                    </tr>\n                </thead>\n                <tbody class=\"notification__table\"></tbody>\n            </table>\n            <button\n                style=\"width: 94%; margin: 3%; background-color: #fba29e;\"\n                onclick=\"logout()\">\n                    \u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C \u043F\u043E\u043A\u0443\u043F\u043A\u0438\n            </button>\n        ";
+    var notificationInner = nav_main_nitifications;
     document.querySelector('.content').innerHTML = notificationInner;
     notificationInner = '';
     userNotifications.forEach(function (e) {
@@ -32,7 +32,7 @@ function admin() {
     return;
   }
 
-  document.querySelector('.container').innerHTML = "\n        <div class=\"admin\">\n            <h1>\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0441\u043F\u0438\u0441\u043E\u043A</h1>\n            <table>\n                <thead>\n                    <tr>\n                        <td class=\"head\">\u041D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435</td>\n                        <td class=\"head\" colspan=\"2\">\u041A\u043E\u043B-\u0432\u043E</td>\n                    </tr>\n                </thead>\n                <tbody class=\"admin__table\"></tbody>\n            </table>\n            <div class=\"add__item\">\n                <img onclick=\"addItem()\" src=\"./img/add.png\" alt=\"add__item\">\n            </div>\n        </div>\n    ";
+  document.querySelector('.container').innerHTML = nav_admin;
 
   if (itemsList.length > 0) {
     var inner = '';
@@ -42,14 +42,14 @@ function admin() {
     document.querySelector('.admin__table').innerHTML = inner;
 
     if (itemsList.length > 1) {
-      document.querySelector('.admin').innerHTML += "\n                <button style=\"width: 94%; margin: 3%; background-color: #5cd8dc;\"\n                    onclick=\"saveList()\">\n                        \u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u0441\u043F\u0438\u0441\u043E\u043A \u0432 \u0438\u0437\u0431\u0440\u0430\u043D\u043D\u043E\u0435\n                </button>\n            ";
+      document.querySelector('.admin').innerHTML += nav_admin_save;
     }
   }
 
-  document.querySelector('.content').innerHTML = "\n        <button style=\"width: 94%; margin: 3%; background-color: #fba29e;\"\n            onclick=\"logout()\">\n                \u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C \u043F\u043E\u043A\u0443\u043F\u043A\u0438\n        </button>\n    ";
+  document.querySelector('.content').innerHTML = exit_button;
 
   if (document.querySelector('.admin__table').rows.length > 0) {
-    document.querySelector('.content').innerHTML = "\n            <p>\u041E\u0441\u043D\u043E\u0432\u043D\u044B\u0435 \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u0438</p>\n            <div class=\"chart\">\n                <canvas id=\"statChart\"></canvas>\n            </div>\n            <button style=\"width: 94%; margin: 3%; background-color: #fba29e;\"\n                onclick=\"logout()\">\n                    \u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C \u043F\u043E\u043A\u0443\u043F\u043A\u0438\n            </button>\n        ";
+    document.querySelector('.content').innerHTML = chart_add;
     var itemsCollection = document.querySelector('.admin__table').rows;
     var qty = itemsCollection.length;
     var itemsQty = 0;
@@ -81,7 +81,7 @@ function admin() {
       }
     });
   } else {
-    document.querySelector('.admin__table').innerHTML += "\n            <td colspan=\"2\">\xAF\\_(\u30C4)_/\xAF</td>\n        ";
+    document.querySelector('.admin__table').innerHTML += empty_table;
   }
 
   activeitem('admin');
@@ -93,7 +93,7 @@ function user() {
     return;
   }
 
-  document.querySelector('.container').innerHTML = "\n        <div class=\"admin\" style=\"margin-bottom: 25px;\">\n            <h1>\u041A\u0443\u043F\u0438\u0442\u044C \u043F\u043E \u0441\u043F\u0438\u0441\u043A\u0443</h1>\n            <table>\n                <thead>\n                    <tr>\n                        <td class=\"head\">\u041D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435</td>\n                        <td class=\"head\" colspan=\"2\">\u041A\u043E\u043B-\u0432\u043E</td>\n                    </tr>\n                </thead>\n                <tbody class=\"user__table\"></tbody>\n            </table>\n        </div>\n    ";
+  document.querySelector('.container').innerHTML = nav_user;
 
   if (itemsList.length > 0) {
     var inner = '';
@@ -103,10 +103,10 @@ function user() {
     document.querySelector('.user__table').innerHTML = inner;
   }
 
-  document.querySelector('.content').innerHTML = "\n        <button style=\"width: 94%; margin: 3%; background-color: #fba29e;\"\n            onclick=\"logout()\">\n                \u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C \u043F\u043E\u043A\u0443\u043F\u043A\u0438\n        </button>\n    ";
+  document.querySelector('.content').innerHTML = exit_button;
 
   if (document.querySelector('.user__table').rows.length > 0) {
-    document.querySelector('.content').innerHTML = "\n            <p>\u041E\u0441\u043D\u043E\u0432\u043D\u044B\u0435 \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u0438</p>\n            <div class=\"chart\">\n                <canvas id=\"statChart\"></canvas>\n            </div>\n            <button style=\"width: 94%; margin: 3%; background-color: #fba29e;\"\n                onclick=\"logout()\">\n                    \u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C \u043F\u043E\u043A\u0443\u043F\u043A\u0438\n            </button>\n        ";
+    document.querySelector('.content').innerHTML = chart_add;
     var itemsCollection = document.querySelector('.user__table').rows;
     var qty = itemsCollection.length;
     var itemsQty = 0;
@@ -142,7 +142,7 @@ function user() {
       }
     });
   } else {
-    document.querySelector('.user__table').innerHTML += "\n            <td colspan=\"2\">\xAF\\_(\u30C4)_/\xAF</td>\n        ";
+    document.querySelector('.user__table').innerHTML += empty_table;
   }
 
   activeitem('user');
@@ -156,7 +156,7 @@ function toplist() {
     return;
   }
 
-  document.querySelector('.container').innerHTML = "\n        <div class=\"admin\" style=\"margin-bottom: 25px;\">\n            <h1>\u0421\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u043D\u044B\u0435 \u0441\u043F\u0438\u0441\u043A\u0438</h1>\n            <table>\n                <thead>\n                    <tr>\n                        <td class=\"head\" colspan=\"4\">\u041D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435</td>\n                    </tr>\n                </thead>\n                <tbody class=\"top__table\"></tbody>\n            </table>\n        </div>\n    ";
+  document.querySelector('.container').innerHTML = nav_topList;
 
   if (savedList.length > 0) {
     var inner = '';
@@ -170,16 +170,16 @@ function toplist() {
       if (checkIndex.indexOf(e.id) == -1) {
         inner += "\n                    <td style=\"background-color: #5cd8dc; border-radius: 3px;\" class=\"delete\">\n                        <img onclick=\"assignList('".concat(e.id, "')\"\n                            class=\"action__img\"\n                            src=\"./img/assign.png\"\n                            alt=\"delete__item\">\n                    </td>\n                ");
       } else {
-        inner += "\n                    <td style=\"background-color: #ccc; opacity: 0.5; border-radius: 3px;\" class=\"delete\">\n                        <img\n                            class=\"action__img\"\n                            src=\"./img/assign.png\"\n                            alt=\"delete__item\">\n                    </td>\n                ";
+        inner += nav_topList_inactive_assign;
       }
 
       inner += "\n                    <td class=\"delete\">\n                        <img onclick=\"delItem('".concat(e.id, "', 'list')\"\n                            class=\"action__img\"\n                            src=\"./img/delete.png\"\n                            alt=\"delete__item\">\n                    </td>\n                </tr>\n            ");
     });
     document.querySelector('.top__table').innerHTML = inner;
   } else {
-    document.querySelector('.top__table').innerHTML += "\n            <td colspan=\"2\">\xAF\\_(\u30C4)_/\xAF</td>\n        ";
+    document.querySelector('.top__table').innerHTML += empty_table;
   }
 
-  document.querySelector('.content').innerHTML = "\n        <button style=\"width: 94%; margin: 3%; background-color: #fba29e;\"\n            onclick=\"logout()\">\n                \u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C \u043F\u043E\u043A\u0443\u043F\u043A\u0438\n        </button>\n    ";
+  document.querySelector('.content').innerHTML = exit_button;
   activeitem('top');
 }

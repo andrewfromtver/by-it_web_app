@@ -50,11 +50,7 @@ function blurUi(toggle = false) {
 }
 /* Preload images & init */
 function preloadMedia() {
-    document.querySelector('.login__placeholder').innerHTML = `
-        <div style="margin: 0 auto;">
-            <div class="cm-spinner"></div>
-        </div>
-    `;
+    document.querySelector('.login__placeholder').innerHTML = cm_spinner;
     setTimeout(main, 3000);
 }
 /* Active navbar item */
@@ -149,32 +145,8 @@ function hideWarn(type = false) {
 }
 function warnPopup(type = 'main') {
     blurUi(true);
-    var functionName = `hideWarn('${type}')`;
-    if (type == 'logout') {
-        functionName = `logout('shutDown')`;
-    }
-    document.querySelector('body').innerHTML += `
-    <div class="add__placeholder">
-        <div class="add">
-            <h1>Завершение покупки</h1>
-            <div style="display: flex; flex-direction: row; justify-content: center;">
-                <button style="background-color: #5cd8dc;"
-                    onclick="hideWarn()">
-                        Отмена
-                </button>
-                <button style="background-color: #fba29e;"
-                    onclick="${functionName}">
-                        Завершить
-                </button>
-            </div>
-        </div>
-        <div class="error">
-            <p style="color: tomato; width: 400px; max-width: 95vw; font-size: 14px;">
-                <code>Текущий прогресс будет утерян</code>
-            </p>
-        </div>
-    </div>
-    `;
+    document.querySelector('body').innerHTML += warn_popup;
+    document.querySelector('#customOnclick').onclick = function(){hideWarn(type);};
 }
 /* Clear error notification */
 function errorCleaner() {
@@ -182,31 +154,7 @@ function errorCleaner() {
 }
 /* Back button */
 function initApp() {
-    document.body.innerHTML = `
-        <div class="login__placeholder">
-            <div class="login">
-                <h1>Список покупок</h1>
-                <p style="font-size: 14px;">
-                    <code>1 - составляйте списки покупок<br>
-                    <br>
-                    2 - отмечайте покупки в списке<br>
-                    <br>
-                    3 - сохраняйте избраные списки<br>
-                    <br>
-                    4 - устанавливайте напоминания</code>
-                </p>
-                <div style="display: flex; flex-direction: row; justify-content: center;">
-                    <button
-                        style="background-color: #5cd8dc; width: 80%;"
-                        onclick="login(true)"
-                    >
-                        Перейти к покупкам
-                    </button>
-                </div>
-                <div class="error"></div>
-            </div>
-        </div>
-    `;
+    document.body.innerHTML = init_data;
     if (username != '') {
         preloadMedia();
     }

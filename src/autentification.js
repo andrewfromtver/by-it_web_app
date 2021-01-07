@@ -30,38 +30,10 @@ function logout(type = 'none') {
         if (type == 'none') {
             if (savedList.length > 0) {
                 blurUi(true);
-                document.querySelector('body').innerHTML += `
-                    <div class="add__placeholder">
-                        <div class="add">
-                            <h1>Помогите нам стать лучше</h1>
-                            <p style="font-size: 14px;"><code>Вы можете помочь нам сделать приложение лучше, 
-                            отправив нам свои сохраненные списки покупок.
-                            Полученная информация поможет нам сделать приложение 
-                            удобнее для использования. Вся передаваемая вами информация деперсонализированна
-                            мы получим только ваши списки покупок, без привязки к вашим персональным данным.</code></p>
-                            <div style="display: flex; flex-direction: row; justify-content: center;">
-                                <button id="yes" style="background-color: #5cd8dc;"
-                                    onclick="logout('yes')">
-                                        Отправить
-                                </button>
-                                <button id="no" style="background-color: #fba29e;"
-                                    onclick="logout('no')">
-                                        Не отправлять
-                                </button>
-                            </div>
-                            <div class="error"></div>
-                        </div>
-                    </div>
-                `;
+                document.querySelector('body').innerHTML += send_data_warn;
             }
             else {
-                document.querySelector('.content').querySelector('button').innerHTML = `
-                    <div>
-                        <div style="display: flex; justify-content: center;">
-                            <div class="dot-loader"></div>
-                        </div>
-                    </div>
-                `;
+                document.querySelector('.content').querySelector('button').innerHTML = inbutton_loader;
                 username = '';
                 localStorage.removeItem('username');
                 setTimeout(function() {
@@ -74,13 +46,7 @@ function logout(type = 'none') {
         }
         else if (type == 'yes') {
             selectedRows = 0;
-            document.querySelector('#yes').innerHTML = `
-                <div>
-                    <div style="display: flex; justify-content: center;">
-                        <div class="dot-loader"></div>
-                    </div>
-                </div>
-            `;
+            document.querySelector('#yes').innerHTML = inbutton_loader;
             sendJson(savedList);
             username = '';
             localStorage.removeItem('username');
@@ -93,13 +59,7 @@ function logout(type = 'none') {
         }
         else if (type == 'no') {
             selectedRows = 0;
-            document.querySelector('#no').innerHTML = `
-                <div>
-                    <div style="display: flex; justify-content: center;">
-                        <div class="dot-loader"></div>
-                    </div>
-                </div>
-            `;
+            document.querySelector('#no').innerHTML = inbutton_loader;
             username = '';
             localStorage.removeItem('username');
             setTimeout(function() {
