@@ -11,4 +11,9 @@ let savedList = [];
 let username = '';
 let activetab = '';
 let selectedRows = 0;
+let selectedItems = 0;
 let placeSwitch = 'assignList';
+
+let assignListId = '';
+let useListId = '';
+let delItemId = '';
