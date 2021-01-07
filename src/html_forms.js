@@ -68,7 +68,7 @@ const nav_main = `
     </div>
     <div class="app__data">
         <div class="container">
-            <h1>${username}</h1>
+            <h1>Список покупок</h1>
             <div class="main__img">
                 <img src="./img/logo.png" alt="main">
             </div>
