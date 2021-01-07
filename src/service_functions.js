@@ -155,7 +155,7 @@ function errorCleaner() {
 /* Back button */
 function initApp() {
     document.body.innerHTML = init_data;
-    if (username != '') {
+    if (deviceInfo != '') {
         preloadMedia();
     }
 }

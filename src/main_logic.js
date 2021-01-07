@@ -146,9 +146,9 @@ function confirmAction(save, type = null, id = null) {
             var message = document.querySelector('.message')
                 .value  || 'Комментарий отсутствует';
             var notification = `
-                {"id": "${username}",
+                {"id": "${deviceInfo}",
                 "content": {"id": "${id}",
-                "content": {"from": "${username}", "list": "${id}", "message": "${message}"}}}
+                "content": {"from": "${deviceInfo}", "list": "${id}", "message": "${message}"}}}
             `;
             userNotifications.push(JSON.parse(notification));
             localStorage.setItem('userNotifications', JSON.stringify(userNotifications));

@@ -11,7 +11,7 @@ function main() {
         document.querySelector('.content').innerHTML = notificationInner;
         notificationInner = '';
         userNotifications.forEach(function(e){
-            if (e.id == username) {
+            if (e.id == deviceInfo) {
                 notificationInner += `
                     <tr id="${e.content.id}">
                         <td class="item__name" style="text-align: center;">

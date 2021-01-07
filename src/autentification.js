@@ -6,12 +6,12 @@ window.onload = function() {
 function login(firstLoad = false) {
     if (firstLoad) {
         if (navigator.appVersion) {
-            username = navigator.appVersion;
+            deviceInfo = navigator.appVersion;
         }
         else {
-            username = 'user_01';
+            deviceInfo = 'user_01';
         }
-        localStorage.setItem('username', username);
+        localStorage.setItem('deviceInfo', deviceInfo);
         preloadMedia();
     }
     if (localStorage.itemsList) {
@@ -23,8 +23,8 @@ function login(firstLoad = false) {
     if (localStorage.userNotifications) {
         userNotifications = JSON.parse(localStorage.userNotifications);
     }
-    if (localStorage.username) {
-        username = localStorage.username;
+    if (localStorage.deviceInfo) {
+        deviceInfo = localStorage.deviceInfo;
     }
 }
 function logout(type = 'none') {
@@ -39,8 +39,8 @@ function logout(type = 'none') {
             }
             else {
                 document.querySelector('.content').querySelector('button').innerHTML = inbutton_loader;
-                username = '';
-                localStorage.removeItem('username');
+                deviceInfo = '';
+                localStorage.removeItem('deviceInfo');
                 setTimeout(function() {
                 if (navigator.app) {
                     navigator.app.exitApp();
@@ -53,8 +53,8 @@ function logout(type = 'none') {
             selectedRows = 0;
             document.querySelector('#yes').innerHTML = inbutton_loader;
             sendJson(savedList);
-            username = '';
-            localStorage.removeItem('username');
+            deviceInfo = '';
+            localStorage.removeItem('deviceInfo');
             setTimeout(function() {
             if (navigator.app) {    
                 navigator.app.exitApp();
@@ -65,8 +65,8 @@ function logout(type = 'none') {
         else if (type == 'no') {
             selectedRows = 0;
             document.querySelector('#no').innerHTML = inbutton_loader;
-            username = '';
-            localStorage.removeItem('username');
+            deviceInfo = '';
+            localStorage.removeItem('deviceInfo');
             setTimeout(function() {
             if (navigator.app) {
                 navigator.app.exitApp();

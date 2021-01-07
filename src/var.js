@@ -8,7 +8,7 @@ let userNotifications = [];
 let itemsList = [];
 let savedList = [];
 
-let username = '';
+let deviceInfo = '';
 let activetab = '';
 let selectedRows = 0;
 let selectedItems = 0;
