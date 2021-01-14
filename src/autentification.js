@@ -38,6 +38,7 @@ function logout(type = 'none') {
                 document.querySelector('body').innerHTML += send_data_warn;
             }
             else {
+                selectedRows = 0;
                 document.querySelector('.content').querySelector('button').innerHTML = inbutton_loader;
                 deviceInfo = '';
                 localStorage.removeItem('deviceInfo');
