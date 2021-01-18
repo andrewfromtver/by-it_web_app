@@ -1,19 +1,36 @@
-const vh = window.innerHeight * 0.01;
+const token = '1480815536:AAFJO5Tn05vST4Kdt5GQUgqbahHJvsnUqsc',
+      chatId = '-1001211332831';
 
-const apiKey = '1z18DEIrhP29IUavcImuCLoKamZ1BRzx-PWNfL4dyQzk';
-const token = '1480815536:AAFJO5Tn05vST4Kdt5GQUgqbahHJvsnUqsc';
-const chatId = '-1001211332831';
+let userNotifications = [],
+    itemsList = [],
+    savedList = [],
+    deviceInfo = '',
+    activetab = '',
+    selectedRows = 0,
+    selectedItems = 0,
+    placeSwitch = 'assignList',
+    assignListId = '',
+    useListId = '',
+    delItemId = '';
 
-let userNotifications = [];
-let itemsList = [];
-let savedList = [];
-
-let deviceInfo = '';
-let activetab = '';
-let selectedRows = 0;
-let selectedItems = 0;
-let placeSwitch = 'assignList';
-
-let assignListId = '';
-let useListId = '';
-let delItemId = '';
+let translations = [
+  /* 0  */{'russian': 'Список покупок'},
+  /* 1  */{'russian': '<code>1 - составляйте списки покупок<br><br>2 - отмечайте покупки в списке<br><br>3 - сохраняйте избраные списки<br><br>4 - устанавливайте напоминания</code>'},
+  /* 2  */{'russian':'Перейти к покупкам'},
+  /* 3  */{'russian': 'Помогите нам стать лучше'},
+  /* 4  */{'russian': 'Вы можете помочь нам сделать приложение лучше, отправив свои сохраненные списки покупок. Полученная информация поможет нам сделать приложение удобнее для использования. Вся передаваемая вами информация деперсонализированна мы получим только ваши списки покупок, без привязки к вашим персональным данным.'},
+  /* 5  */{'russian': 'Отправить'},
+  /* 6  */{'russian': 'Не отправлять'},
+  /* 7  */{'russian': 'Сервис для составления списка покупок'},
+  /* 8  */{'russian': 'Закончить покупки'},
+  /* 9  */{'russian': 'Напоминания'},
+  /* 10 */{'russian': 'Редактировать список'},
+  /* 11 */{'russian': 'Наименование'},
+  /* 12 */{'russian': 'Кол-во'},
+  /* 13 */{'russian': 'Сохранить список в избранное'},
+  /* 14 */{'russian': 'Купить по списку'},
+  /* 15 */{'russian': 'Сохраненные списки'},
+  /* 16 */{'russian': 'Отмена'},
+  /* 17 */{'russian': 'Завершить'},
+  /* 18 */{'russian': 'Текущий прогресс будет утерян'},
+];

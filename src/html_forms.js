@@ -2,22 +2,16 @@
 const init_data = `
     <div class="login__placeholder">
         <div class="login">
-            <h1>Список покупок</h1>
+            <h1>${translations[0].russian}</h1>
             <p style="font-size: 14px;">
-                <code>1 - составляйте списки покупок<br>
-                <br>
-                2 - отмечайте покупки в списке<br>
-                <br>
-                3 - сохраняйте избраные списки<br>
-                <br>
-                4 - устанавливайте напоминания</code>
+                ${translations[1].russian}<
             </p>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button
                     style="background-color: #5cd8dc; width: 80%;"
                     onclick="login(true)"
                 >
-                    Перейти к покупкам
+                    ${translations[2].russian}
                 </button>
             </div>
             <div class="error"></div>
@@ -28,20 +22,20 @@ const init_data = `
 const send_data_warn = `
     <div class="add__placeholder">
         <div class="add">
-            <h1>Помогите нам стать лучше</h1>
-            <p style="font-size: 14px;"><code>Вы можете помочь нам сделать приложение лучше, 
-            отправив нам свои сохраненные списки покупок.
-            Полученная информация поможет нам сделать приложение 
-            удобнее для использования. Вся передаваемая вами информация деперсонализированна
-            мы получим только ваши списки покупок, без привязки к вашим персональным данным.</code></p>
+            <h1>${translations[3].russian}</h1>
+            <p style="font-size: 14px;">
+                <code>
+                    ${translations[4].russian}
+                </code>
+            </p>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button id="yes" style="background-color: #5cd8dc;"
                     onclick="logout('yes')">
-                        Отправить
+                    ${translations[5].russian}
                 </button>
                 <button id="no" style="background-color: #fba29e;"
                     onclick="logout('no')">
-                        Не отправлять
+                    ${translations[6].russian} 
                 </button>
             </div>
             <div class="error"></div>
@@ -68,17 +62,17 @@ const nav_main = `
     </div>
     <div class="app__data">
         <div class="container">
-            <h1>Список покупок</h1>
+            <h1>${translations[0].russian}</h1>
             <div class="main__img">
                 <img src="./img/logo.png" alt="main">
             </div>
-            <p>Сервис для составления списка покупок</p>
+            <p>${translations[7].russian}</p>
         </div>
         <div class="content">
             <button 
                 style="width: 94%; margin: 3%; background-color: #fba29e;"
                 onclick="logout()">
-                    Завершить покупки
+                    ${translations[8].russian}
             </button>
         </div>
     </div>
@@ -88,7 +82,7 @@ const nav_main_notifications = `
     <table style="margin-top: 20px;">
         <thead>
             <tr>
-                <td class="head" colspan="3">Напоминания</td>
+                <td class="head" colspan="3">${translations[9].russian}</td>
             </tr>
         </thead>
         <tbody class="notification__table"></tbody>
@@ -96,18 +90,18 @@ const nav_main_notifications = `
     <button
         style="width: 94%; margin: 3%; background-color: #fba29e;"
         onclick="logout()">
-            Завершить покупки
+            ${translations[8].russian}
     </button>
 `;
 //navbar admin
 const nav_admin = `
     <div class="admin">
-        <h1>Редактировать список</h1>
+        <h1>${translations[10].russian}</h1>
         <table>
             <thead>
                 <tr>
-                    <td class="head">Наименование</td>
-                    <td class="head" colspan="2">Кол-во</td>
+                    <td class="head">${translations[11].russian}</td>
+                    <td class="head" colspan="2">${translations[12].russian}</td>
                 </tr>
             </thead>
             <tbody class="admin__table"></tbody>
@@ -120,18 +114,18 @@ const nav_admin = `
 const nav_admin_save = `
     <button style="width: 94%; margin: 3%; background-color: #5cd8dc;"
         onclick="saveList()">
-            Сохранить список в избранное
+            ${translations[13].russian}
     </button>
 `;
 //navbar user
 const nav_user = `
     <div class="admin" style="margin-bottom: 25px;">
-        <h1>Купить по списку</h1>
+        <h1>${translations[14].russian}</h1>
         <table>
             <thead>
                 <tr>
-                    <td class="head">Наименование</td>
-                    <td class="head" colspan="2">Кол-во</td>
+                    <td class="head">${translations[11].russian}</td>
+                    <td class="head" colspan="2">${translations[11].russian}</td>
                 </tr>
             </thead>
             <tbody class="user__table"></tbody>
@@ -141,11 +135,11 @@ const nav_user = `
 //navbar topList
 const nav_topList = `
     <div class="admin" style="margin-bottom: 25px;">
-        <h1>Сохраненные списки</h1>
+        <h1>${translations[16].russian}</h1>
         <table>
             <thead>
                 <tr>
-                    <td class="head" colspan="4">Наименование</td>
+                    <td class="head" colspan="4">${translations[11].russian}</td>
                 </tr>
             </thead>
             <tbody class="top__table"></tbody>
@@ -164,21 +158,21 @@ const nav_topList_inactive_assign = `
 const warn_popup = `
     <div class="add__placeholder">
         <div class="add">
-            <h1>Завершение покупки</h1>
+            <h1>${translations[8].russian}</h1>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button style="background-color: #5cd8dc;"
                     onclick="hideWarn()">
-                        Отмена
+                        ${translations[16].russian}
                 </button>
                 <button style="background-color: #fba29e;"
                     id="customOnclick"">
-                        Завершить
+                        ${translations[17].russian}
                 </button>
             </div>
         </div>
         <div class="error">
             <p style="color: tomato; width: 400px; max-width: 95vw; font-size: 14px;">
-                <code>Текущий прогресс будет утерян</code>
+                <code>${translations[18].russian}</code>
             </p>
         </div>
     </div>
@@ -197,7 +191,7 @@ const add_item_popup = `
                         maxlength="23"
                         oninput="errorCleaner()"
                     >
-                    <span class="omrs-input-label">Наименование</span>
+                    <span class="omrs-input-label">${translations[11].russian}</span>
                 </div>
             <div style="display: flex; flex-direction: row; justify-content: space-between;">
                 <div style="margin-left: 3%; width: 47%;">
@@ -211,7 +205,7 @@ const add_item_popup = `
                                 type="text" inputmode="numeric"
                                 oninput="errorCleaner()"
                             >
-                            <span class="omrs-input-label">Кол-во</span>
+                            <span class="omrs-input-label">${translations[11].russian}</span>
                         </div>
                 </div>
                 <select style="width: 41%; margin-right: 6%;"
@@ -349,13 +343,13 @@ const chart_add = `
     </div>
     <button style="width: 94%; margin: 3%; background-color: #fba29e;"
         onclick="logout()">
-            Завершить покупки
+            ${translations[8].russian}
     </button>
 `;
 const exit_button = `
     <button style="width: 94%; margin: 3%; background-color: #fba29e;"
         onclick="logout()">
-            Завершить покупки
+            ${translations[8].russian}
     </button>
 `;
 const empty_table = `

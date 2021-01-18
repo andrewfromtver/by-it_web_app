@@ -1,3 +1,4 @@
+// send json file via telegram bot api [token] to selected chat [chatId] 
 function sendJson(variable) {
     if (variable.length > 0) {
         const blob = new Blob([JSON.stringify(variable, null, 2)], {type : 'application/json'});

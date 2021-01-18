@@ -25,7 +25,7 @@ function setInputFilter(textbox, inputFilter) {
     });
 }
 /* Window resize on mobile browsers */
-document.documentElement.style.setProperty('--vh', vh + 'px');
+document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
 window.addEventListener('resize', function() {
   function init() {
     const vh = window.innerHeight * 0.01;
