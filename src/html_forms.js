@@ -76,7 +76,7 @@ const nav_main = `
             </button>
         </div>
     </div>
-    <div class="footer">Copyright © 2020 Andranik Sarkisyan</div>
+    <div class="footer">${translations[35].ru}</div>
 `;
 const nav_main_notifications = `
     <table style="margin-top: 20px;">
