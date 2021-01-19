@@ -181,7 +181,7 @@ const warn_popup = `
 const add_item_popup = `
     <div class="add__placeholder">
         <div class="add">
-            <h1>В список покупок</h1>
+            <h1>${translations[19].russian}</h1>
                 <div class="omrs-input-group">
                     <label class="omrs-input-underlined">
                     <input
@@ -210,7 +210,6 @@ const add_item_popup = `
                 </div>
                 <select style="width: 41%; margin-right: 6%;"
                     class="add__input unit"
-                    placeholder="Имя пользователя"
                     onchange="errorCleaner()">
                         <option id="0">шт</option>
                         <option id="1">кг</option>
@@ -222,11 +221,11 @@ const add_item_popup = `
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button style="background-color: #5cd8dc;"
                     onclick="confirmAction(true)">
-                        Добавить
+                        ${translations[19].russian}
                 </button>
                 <button style="background-color: #fba29e;"
                     onclick="confirmAction(false)">
-                        Отмена
+                        ${translations[21].russian}
                 </button>
             </div>
             <div class="error"></div>
@@ -236,21 +235,21 @@ const add_item_popup = `
 const del_item_popup = `
     <div class="add__placeholder">
         <div class="add">
-            <h1>Удалить список</h1>
+            <h1>${translations[22].russian}</h1>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button style="background-color: #fba29e;"
                     id="delListById">
-                        Удалить
+                        ${translations[23].russian}
                 </button>
                 <button style="background-color: #5cd8dc;"
                     onclick="confirmAction(false, 'loadList')">
-                        Отмена
+                        ${translations[21].russian}
                 </button>
             </div>
         </div>
         <div class="error">
             <p style="color: tomato; width: 400px; max-width: 95vw; font-size: 14px;">
-                <code>Список также будет удалён из напоминаний</code>
+                <code>${translations[24].russian}</code>
             </p>
         </div>
     </div>
@@ -258,7 +257,7 @@ const del_item_popup = `
 const save_list_popup = `
     <div class="add__placeholder">
         <div class="add">
-            <h1>Сохранить список</h1>
+            <h1>${translations[25].russian}</h1>
                 <div class="omrs-input-group">
                     <label class="omrs-input-underlined">
                     <input
@@ -268,16 +267,16 @@ const save_list_popup = `
                         maxlength="25"
                         oninput="errorCleaner()"
                     >
-                    <span class="omrs-input-label">Название</span>
+                    <span class="omrs-input-label">${translations[26].russian}</span>
                 </div>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button style="background-color: #5cd8dc;"
                     onclick="confirmAction(true, 'list')">
-                        Сохранить
+                        ${translations[27].russian}
                 </button>
                 <button style="background-color: #fba29e;"
                     onclick="confirmAction(false)">
-                        Отмена
+                        ${translations[21].russian}
                 </button>
             </div>
             <div class="error"></div>
@@ -287,7 +286,7 @@ const save_list_popup = `
 const assign_list_popup = `
     <div class="add__placeholder">
         <div class="add">
-            <h1>Добавить напоминание</h1>
+            <h1>${translations[28].russian}</h1>
                 <div class="omrs-input-group">
                     <label class="omrs-input-underlined">
                     <input
@@ -297,16 +296,16 @@ const assign_list_popup = `
                         maxlength="75"
                         oninput="errorCleaner()"
                     >
-                    <span class="omrs-input-label">Комментарий</span>
+                    <span class="omrs-input-label">${translations[29].russian}</span>
                 </div>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button style="background-color: #5cd8dc;"
                     id="assignListById">
-                        Добавить
+                        ${translations[20].russian} 
                 </button>
                 <button style="background-color: #fba29e;"
                     onclick="confirmAction(false, 'loadList')">
-                        Отмена
+                        ${translations[21].russian}
                 </button>
             </div>
             <div class="error"></div>
@@ -316,28 +315,28 @@ const assign_list_popup = `
 const use_list_popup = `
     <div class="add__placeholder">
         <div class="add">
-            <h1>Загрузить список</h1>
+            <h1>${translations[30].russian}</h1>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button style="background-color: #5cd8dc;"
                     id="useListById">
-                        Загрузить
+                        ${translations[31].russian}
                 </button>
                 <button style="background-color: #fba29e;"
                     id="doNotUseListById">
-                        Отмена
+                        ${translations[21].russian}
                 </button>
             </div>
         </div>
         <div class="error">
             <p style="color: tomato; width: 400px; max-width: 95vw; font-size: 14px;">
-                <code>Текущий список покупок будет изменён</code>
+                <code>${translations[21].russian}</code>
             </p>
         </div>
     </div>
 `;
 //global
 const chart_add = `
-    <p>Основные показатели</p>
+    <p>${translations[33].russian}</p>
     <div class="chart">
         <canvas id="statChart"></canvas>
     </div>
@@ -369,6 +368,6 @@ const cm_spinner = `
 `;
 const popup_error = `
     <p style="color: tomato; position: absolute; width: 400px; max-width: 95vw; font-size: 14;"">
-        <code>Заполните все поля<code/>
+        <code>${translations[34].russian}<code/>
     </p>
 `;
