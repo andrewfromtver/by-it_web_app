@@ -2,16 +2,16 @@
 const init_data = `
     <div class="login__placeholder">
         <div class="login">
-            <h1>${translations[0].russian}</h1>
+            <h1>${translations[0].ru}</h1>
             <p style="font-size: 14px;">
-                ${translations[1].russian}<
+                ${translations[1].ru}
             </p>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button
                     style="background-color: #5cd8dc; width: 80%;"
                     onclick="login(true)"
                 >
-                    ${translations[2].russian}
+                    ${translations[2].ru}
                 </button>
             </div>
             <div class="error"></div>
@@ -22,20 +22,20 @@ const init_data = `
 const send_data_warn = `
     <div class="add__placeholder">
         <div class="add">
-            <h1>${translations[3].russian}</h1>
+            <h1>${translations[3].ru}</h1>
             <p style="font-size: 14px;">
                 <code>
-                    ${translations[4].russian}
+                    ${translations[4].ru}
                 </code>
             </p>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button id="yes" style="background-color: #5cd8dc;"
                     onclick="logout('yes')">
-                    ${translations[5].russian}
+                    ${translations[5].ru}
                 </button>
                 <button id="no" style="background-color: #fba29e;"
                     onclick="logout('no')">
-                    ${translations[6].russian} 
+                    ${translations[6].ru} 
                 </button>
             </div>
             <div class="error"></div>
@@ -62,17 +62,17 @@ const nav_main = `
     </div>
     <div class="app__data">
         <div class="container">
-            <h1>${translations[0].russian}</h1>
+            <h1>${translations[0].ru}</h1>
             <div class="main__img">
                 <img src="./img/logo.png" alt="main">
             </div>
-            <p>${translations[7].russian}</p>
+            <p>${translations[7].ru}</p>
         </div>
         <div class="content">
             <button 
                 style="width: 94%; margin: 3%; background-color: #fba29e;"
                 onclick="logout()">
-                    ${translations[8].russian}
+                    ${translations[8].ru}
             </button>
         </div>
     </div>
@@ -82,7 +82,7 @@ const nav_main_notifications = `
     <table style="margin-top: 20px;">
         <thead>
             <tr>
-                <td class="head" colspan="3">${translations[9].russian}</td>
+                <td class="head" colspan="3">${translations[9].ru}</td>
             </tr>
         </thead>
         <tbody class="notification__table"></tbody>
@@ -90,18 +90,18 @@ const nav_main_notifications = `
     <button
         style="width: 94%; margin: 3%; background-color: #fba29e;"
         onclick="logout()">
-            ${translations[8].russian}
+            ${translations[8].ru}
     </button>
 `;
 //navbar admin
 const nav_admin = `
     <div class="admin">
-        <h1>${translations[10].russian}</h1>
+        <h1>${translations[10].ru}</h1>
         <table>
             <thead>
                 <tr>
-                    <td class="head">${translations[11].russian}</td>
-                    <td class="head" colspan="2">${translations[12].russian}</td>
+                    <td class="head">${translations[11].ru}</td>
+                    <td class="head" colspan="2">${translations[12].ru}</td>
                 </tr>
             </thead>
             <tbody class="admin__table"></tbody>
@@ -114,18 +114,18 @@ const nav_admin = `
 const nav_admin_save = `
     <button style="width: 94%; margin: 3%; background-color: #5cd8dc;"
         onclick="saveList()">
-            ${translations[13].russian}
+            ${translations[13].ru}
     </button>
 `;
 //navbar user
 const nav_user = `
     <div class="admin" style="margin-bottom: 25px;">
-        <h1>${translations[14].russian}</h1>
+        <h1>${translations[14].ru}</h1>
         <table>
             <thead>
                 <tr>
-                    <td class="head">${translations[11].russian}</td>
-                    <td class="head" colspan="2">${translations[11].russian}</td>
+                    <td class="head">${translations[11].ru}</td>
+                    <td class="head" colspan="2">${translations[11].ru}</td>
                 </tr>
             </thead>
             <tbody class="user__table"></tbody>
@@ -135,11 +135,11 @@ const nav_user = `
 //navbar topList
 const nav_topList = `
     <div class="admin" style="margin-bottom: 25px;">
-        <h1>${translations[16].russian}</h1>
+        <h1>${translations[16].ru}</h1>
         <table>
             <thead>
                 <tr>
-                    <td class="head" colspan="4">${translations[11].russian}</td>
+                    <td class="head" colspan="4">${translations[11].ru}</td>
                 </tr>
             </thead>
             <tbody class="top__table"></tbody>
@@ -158,21 +158,21 @@ const nav_topList_inactive_assign = `
 const warn_popup = `
     <div class="add__placeholder">
         <div class="add">
-            <h1>${translations[8].russian}</h1>
+            <h1>${translations[8].ru}</h1>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button style="background-color: #5cd8dc;"
                     onclick="hideWarn()">
-                        ${translations[16].russian}
+                        ${translations[16].ru}
                 </button>
                 <button style="background-color: #fba29e;"
                     id="customOnclick"">
-                        ${translations[17].russian}
+                        ${translations[17].ru}
                 </button>
             </div>
         </div>
         <div class="error">
             <p style="color: tomato; width: 400px; max-width: 95vw; font-size: 14px;">
-                <code>${translations[18].russian}</code>
+                <code>${translations[18].ru}</code>
             </p>
         </div>
     </div>
@@ -181,7 +181,7 @@ const warn_popup = `
 const add_item_popup = `
     <div class="add__placeholder">
         <div class="add">
-            <h1>${translations[19].russian}</h1>
+            <h1>${translations[19].ru}</h1>
                 <div class="omrs-input-group">
                     <label class="omrs-input-underlined">
                     <input
@@ -191,7 +191,7 @@ const add_item_popup = `
                         maxlength="23"
                         oninput="errorCleaner()"
                     >
-                    <span class="omrs-input-label">${translations[11].russian}</span>
+                    <span class="omrs-input-label">${translations[11].ru}</span>
                 </div>
             <div style="display: flex; flex-direction: row; justify-content: space-between;">
                 <div style="margin-left: 3%; width: 47%;">
@@ -205,7 +205,7 @@ const add_item_popup = `
                                 type="text" inputmode="numeric"
                                 oninput="errorCleaner()"
                             >
-                            <span class="omrs-input-label">${translations[11].russian}</span>
+                            <span class="omrs-input-label">${translations[11].ru}</span>
                         </div>
                 </div>
                 <select style="width: 41%; margin-right: 6%;"
@@ -221,11 +221,11 @@ const add_item_popup = `
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button style="background-color: #5cd8dc;"
                     onclick="confirmAction(true)">
-                        ${translations[19].russian}
+                        ${translations[19].ru}
                 </button>
                 <button style="background-color: #fba29e;"
                     onclick="confirmAction(false)">
-                        ${translations[21].russian}
+                        ${translations[21].ru}
                 </button>
             </div>
             <div class="error"></div>
@@ -235,21 +235,21 @@ const add_item_popup = `
 const del_item_popup = `
     <div class="add__placeholder">
         <div class="add">
-            <h1>${translations[22].russian}</h1>
+            <h1>${translations[22].ru}</h1>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button style="background-color: #fba29e;"
                     id="delListById">
-                        ${translations[23].russian}
+                        ${translations[23].ru}
                 </button>
                 <button style="background-color: #5cd8dc;"
                     onclick="confirmAction(false, 'loadList')">
-                        ${translations[21].russian}
+                        ${translations[21].ru}
                 </button>
             </div>
         </div>
         <div class="error">
             <p style="color: tomato; width: 400px; max-width: 95vw; font-size: 14px;">
-                <code>${translations[24].russian}</code>
+                <code>${translations[24].ru}</code>
             </p>
         </div>
     </div>
@@ -257,7 +257,7 @@ const del_item_popup = `
 const save_list_popup = `
     <div class="add__placeholder">
         <div class="add">
-            <h1>${translations[25].russian}</h1>
+            <h1>${translations[25].ru}</h1>
                 <div class="omrs-input-group">
                     <label class="omrs-input-underlined">
                     <input
@@ -267,16 +267,16 @@ const save_list_popup = `
                         maxlength="25"
                         oninput="errorCleaner()"
                     >
-                    <span class="omrs-input-label">${translations[26].russian}</span>
+                    <span class="omrs-input-label">${translations[26].ru}</span>
                 </div>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button style="background-color: #5cd8dc;"
                     onclick="confirmAction(true, 'list')">
-                        ${translations[27].russian}
+                        ${translations[27].ru}
                 </button>
                 <button style="background-color: #fba29e;"
                     onclick="confirmAction(false)">
-                        ${translations[21].russian}
+                        ${translations[21].ru}
                 </button>
             </div>
             <div class="error"></div>
@@ -286,7 +286,7 @@ const save_list_popup = `
 const assign_list_popup = `
     <div class="add__placeholder">
         <div class="add">
-            <h1>${translations[28].russian}</h1>
+            <h1>${translations[28].ru}</h1>
                 <div class="omrs-input-group">
                     <label class="omrs-input-underlined">
                     <input
@@ -296,16 +296,16 @@ const assign_list_popup = `
                         maxlength="75"
                         oninput="errorCleaner()"
                     >
-                    <span class="omrs-input-label">${translations[29].russian}</span>
+                    <span class="omrs-input-label">${translations[29].ru}</span>
                 </div>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button style="background-color: #5cd8dc;"
                     id="assignListById">
-                        ${translations[20].russian} 
+                        ${translations[20].ru} 
                 </button>
                 <button style="background-color: #fba29e;"
                     onclick="confirmAction(false, 'loadList')">
-                        ${translations[21].russian}
+                        ${translations[21].ru}
                 </button>
             </div>
             <div class="error"></div>
@@ -315,40 +315,40 @@ const assign_list_popup = `
 const use_list_popup = `
     <div class="add__placeholder">
         <div class="add">
-            <h1>${translations[30].russian}</h1>
+            <h1>${translations[30].ru}</h1>
             <div style="display: flex; flex-direction: row; justify-content: center;">
                 <button style="background-color: #5cd8dc;"
                     id="useListById">
-                        ${translations[31].russian}
+                        ${translations[31].ru}
                 </button>
                 <button style="background-color: #fba29e;"
                     id="doNotUseListById">
-                        ${translations[21].russian}
+                        ${translations[21].ru}
                 </button>
             </div>
         </div>
         <div class="error">
             <p style="color: tomato; width: 400px; max-width: 95vw; font-size: 14px;">
-                <code>${translations[21].russian}</code>
+                <code>${translations[21].ru}</code>
             </p>
         </div>
     </div>
 `;
 //global
 const chart_add = `
-    <p>${translations[33].russian}</p>
+    <p>${translations[33].ru}</p>
     <div class="chart">
         <canvas id="statChart"></canvas>
     </div>
     <button style="width: 94%; margin: 3%; background-color: #fba29e;"
         onclick="logout()">
-            ${translations[8].russian}
+            ${translations[8].ru}
     </button>
 `;
 const exit_button = `
     <button style="width: 94%; margin: 3%; background-color: #fba29e;"
         onclick="logout()">
-            ${translations[8].russian}
+            ${translations[8].ru}
     </button>
 `;
 const empty_table = `
@@ -368,6 +368,6 @@ const cm_spinner = `
 `;
 const popup_error = `
     <p style="color: tomato; position: absolute; width: 400px; max-width: 95vw; font-size: 14;"">
-        <code>${translations[34].russian}<code/>
+        <code>${translations[34].ru}<code/>
     </p>
 `;
