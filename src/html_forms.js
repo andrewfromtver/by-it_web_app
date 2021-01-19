@@ -211,11 +211,11 @@ const add_item_popup = `
                 <select style="width: 41%; margin-right: 6%;"
                     class="add__input unit"
                     onchange="errorCleaner()">
-                        <option id="0">${translations[defaultLang][35]}</option>
-                        <option id="1">${translations[defaultLang][36]}</option>
-                        <option id="2">${translations[defaultLang][37]}</option>
-                        <option id="3">${translations[defaultLang][38]}</option>
-                        <option id="4">${translations[defaultLang][39]}</option>
+                        <option id="0">${translations[defaultLang][36]}</option>
+                        <option id="1">${translations[defaultLang][37]}</option>
+                        <option id="2">${translations[defaultLang][38]}</option>
+                        <option id="3">${translations[defaultLang][39]}</option>
+                        <option id="4">${translations[defaultLang][40]}</option>
                 </select>
             </div>
             <div style="display: flex; flex-direction: row; justify-content: center;">
