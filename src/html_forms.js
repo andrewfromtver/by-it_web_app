@@ -1,33 +1,4 @@
-let init_data,
-    send_data_warn,
-    nav_main,
-    nav_main_notifications,
-    nav_admin,
-    nav_admin_save,
-    nav_user,
-    nav_topList,
-    nav_topList_inactive_assign,
-    warn_popup,
-    add_item_popup,
-    del_item_popup,
-    save_list_popup,
-    assign_list_popup,
-    use_list_popup,
-    chart_add,
-    exit_button,
-    empty_table,
-    inbutton_loader,
-    cm_spinner,
-    popup_error,
-    selectedLang;
-if (localStorage.selectedLang) {
-    selectedLang = localStorage.selectedLang;
-}
-else {
-    selectedLang = 'ru';
-}
-
-//init
+//init html forms with selected lang
 function initStrings(lang) {
     if (lang == 'ru') {
         defaultLang = 0;

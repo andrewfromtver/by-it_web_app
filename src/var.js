@@ -13,7 +13,7 @@ let userNotifications = [],
     useListId = '',
     delItemId = '';
 
-// multilang support
+// multilang support (0 == 'ru', 1 == 'en')
 let defaultLang = 0,
     translations = [ 
         ['Список покупок',
@@ -93,3 +93,35 @@ let defaultLang = 0,
         'pc.', 'kg', 'g', 'l', 'ml',
         'Shopping list', 'Items', 'Planned', 'Purchased']
     ];
+
+// empty html forms init
+let init_data,
+    send_data_warn,
+    nav_main,
+    nav_main_notifications,
+    nav_admin,
+    nav_admin_save,
+    nav_user,
+    nav_topList,
+    nav_topList_inactive_assign,
+    warn_popup,
+    add_item_popup,
+    del_item_popup,
+    save_list_popup,
+    assign_list_popup,
+    use_list_popup,
+    chart_add,
+    exit_button,
+    empty_table,
+    inbutton_loader,
+    cm_spinner,
+    popup_error,
+    selectedLang;
+
+// check selected lang
+if (localStorage.selectedLang) {
+    selectedLang = localStorage.selectedLang;
+}
+else {
+    selectedLang = 'ru';
+}
