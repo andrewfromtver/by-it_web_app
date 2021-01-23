@@ -17,12 +17,14 @@ function initStrings(lang) {
                 <p style="font-size: 14px; text-align: left; width: 87%;">
                     ${translations[defaultLang][1]}
                 </p>
-                <select style="width: 30%; margin: 0 35% 15px; text-align-last:center; padding: 0;"
-                class="add__input unit lang-selector"
-                onchange="initApp(this.value)">
-                    <option value="en">English</option>
-                    <option value="ru">Русский</option>
-                </select>
+                <div style="width: 100%; display: flex;">
+                    <select style="padding: 0 20px; margin: 0 auto 15px auto; text-align-last: center;"
+                    class="add__input unit lang-selector"
+                    onchange="initApp(this.value)">
+                        <option value="en">English</option>
+                        <option value="ru">Русский</option>
+                    </select>
+                </div>
                 <div style="display: flex; flex-direction: row; justify-content: center;">
                     <button
                         style="background-color: #5cd8dc; width: 80%;"
