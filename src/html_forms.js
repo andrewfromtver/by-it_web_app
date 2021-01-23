@@ -171,7 +171,7 @@ function initStrings(lang) {
                 <thead>
                     <tr>
                         <td class="head">${translations[defaultLang][11]}</td>
-                        <td class="head" colspan="2">${translations[defaultLang][11]}</td>
+                        <td class="head" colspan="2">${translations[defaultLang][12]}</td>
                     </tr>
                 </thead>
                 <tbody class="user__table"></tbody>
@@ -181,7 +181,7 @@ function initStrings(lang) {
     //navbar topList
     nav_topList = `
         <div class="admin" style="margin-bottom: 25px;">
-            <h1>${translations[defaultLang][16]}</h1>
+            <h1>${translations[defaultLang][15]}</h1>
             <table>
                 <thead>
                     <tr>
@@ -375,7 +375,7 @@ function initStrings(lang) {
             </div>
             <div class="error">
                 <p style="color: tomato; width: 400px; max-width: 95vw; font-size: 14px;">
-                    <code>${translations[defaultLang][21]}</code>
+                    <code>${translations[defaultLang][32]}</code>
                 </p>
             </div>
         </div>
