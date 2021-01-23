@@ -240,7 +240,7 @@ function initStrings(lang) {
                 <div style="display: flex; flex-direction: row; justify-content: center;">
                     <button style="background-color: #5cd8dc;"
                         onclick="confirmAction(true)">
-                            ${translations[defaultLang][19]}
+                            ${translations[defaultLang][20]}
                     </button>
                     <button style="background-color: #fba29e;"
                         onclick="confirmAction(false)">
