@@ -18,16 +18,26 @@ let init_data,
     empty_table,
     inbutton_loader,
     cm_spinner,
-    popup_error;
-
+    popup_error,
+    selectedLang;
+if (localStorage.selectedLang) {
+    selectedLang = localStorage.selectedLang;
+}
+else {
+    selectedLang = 'ru';
+}
 
 //init
 function initStrings(lang) {
     if (lang == 'ru') {
         defaultLang = 0;
+        selectedLang = lang;
+        localStorage.setItem('selectedLang', selectedLang);
     }
-    else {
+    else if (lang == 'en') {
         defaultLang = 1;
+        selectedLang = lang;
+        localStorage.setItem('selectedLang', selectedLang);
     }
     init_data = `
         <div class="login__placeholder">
@@ -36,6 +46,12 @@ function initStrings(lang) {
                 <p style="font-size: 14px;">
                     ${translations[defaultLang][1]}
                 </p>
+                <select style="width: 30%; margin: 0 35% 15px; text-align-last:center; padding: 0;"
+                class="add__input unit lang-selector"
+                onchange="initApp(this.value)">
+                    <option value="en">English</option>
+                    <option value="ru">Русский</option>
+                </select>
                 <div style="display: flex; flex-direction: row; justify-content: center;">
                     <button
                         style="background-color: #5cd8dc; width: 80%;"
@@ -235,7 +251,7 @@ function initStrings(lang) {
                                     type="text" inputmode="numeric"
                                     oninput="errorCleaner()"
                                 >
-                                <span class="omrs-input-label">${translations[defaultLang][11]}</span>
+                                <span class="omrs-input-label">${translations[defaultLang][12]}</span>
                             </div>
                     </div>
                     <select style="width: 41%; margin-right: 6%;"

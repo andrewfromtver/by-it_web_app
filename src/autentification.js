@@ -26,7 +26,6 @@ function login(firstLoad = false) {
     if (localStorage.deviceInfo) {
         deviceInfo = localStorage.deviceInfo;
     }
-    initStrings('ru');
 }
 function logout(type = 'none') {
     if (type == 'shutDown') {

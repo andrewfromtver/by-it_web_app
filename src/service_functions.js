@@ -51,7 +51,7 @@ function blurUi(toggle = false) {
 /* Preload images & init */
 function preloadMedia() {
     document.querySelector('.login__placeholder').innerHTML = cm_spinner;
-    setTimeout(main, 3000);
+    setTimeout(main, 1000);
 }
 /* Active navbar item */
 function activeitem(name = 'main') {
@@ -153,8 +153,10 @@ function errorCleaner() {
     document.querySelector('.error').innerHTML = '';
 }
 /* Back button */
-function initApp() {
+function initApp(lang = selectedLang) {
+    initStrings(lang);
     document.body.innerHTML = init_data;
+    document.querySelector('.lang-selector').value = selectedLang;
     if (deviceInfo != '') {
         preloadMedia();
     }
