@@ -53,7 +53,7 @@ let defaultLang = 0,
         'Заполните все поля',
         'Copyright © 2020 Andranik Sarkisyan',
         'шт', 'кг', 'г', 'л', 'мл',
-        'Список покупок', 'Позиции', 'План', 'Факт'],
+        'Список покупок', 'Позиции', 'План', 'Факт', 'Комментарий отсутствует'],
         ['Shopping list',
         '<code>1 - make shopping lists<br><br>2 - mark your purchases in list<br><br>3 - save your favorite lists<br><br>4 - set reminders</code>',
         'Go to shopping',
@@ -91,7 +91,7 @@ let defaultLang = 0,
         'Please fill all fields',
         'Copyright © 2020 Andranik Sarkisyan',
         'pc.', 'kg', 'g', 'l', 'ml',
-        'Shopping list', 'Items', 'Planned', 'Purchased']
+        'Shopping list', 'Items', 'Planned', 'Purchased', 'No comments']
     ];
 
 // empty html forms init
