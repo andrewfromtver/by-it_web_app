@@ -14,7 +14,7 @@ function initStrings(lang) {
         <div class="login__placeholder">
             <div class="login">
                 <h1>${translations[defaultLang][0]}</h1>
-                <p style="font-size: 14px;">
+                <p style="font-size: 14px; text-align: left; width: 80%;">
                     ${translations[defaultLang][1]}
                 </p>
                 <select style="width: 30%; margin: 0 35% 15px; text-align-last:center; padding: 0;"
