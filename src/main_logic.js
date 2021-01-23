@@ -144,7 +144,7 @@ function confirmAction(save, type = null, id = null) {
         }
         if (type == 'assignList') {
             var message = document.querySelector('.message')
-                .value  || 'Комментарий отсутствует';
+                .value  || translations[defaultLang][45];
             var notification = `
                 {"id": "${deviceInfo}",
                 "content": {"id": "${id}",
