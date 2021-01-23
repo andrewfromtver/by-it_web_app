@@ -119,13 +119,13 @@ function hideWarn(type = false) {
         const chart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Позиции'],
+                labels: [translations[defaultLang][42]],
                 datasets: [{
-                    label: 'План',
+                    label: translations[defaultLang][43],
                     backgroundColor: '#5cd8dc',
                     data: [qty,itemsQty, 0]
                 },{
-                    label: 'Факт',
+                    label: translations[defaultLang][44],
                     backgroundColor: '#fba29e',
                     data: [selectedRows,selectedItems, 0]
                 }]
